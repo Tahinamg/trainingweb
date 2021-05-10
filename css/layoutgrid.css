@@ -1,0 +1,104 @@
+/*reset*/
+*{
+    box-sizing:border-box ;
+}
+.headercontainer{
+    grid-area: header;
+    background-color: rgb(53, 226, 9);
+    display:grid;
+    grid-template-areas: 'navbar' 'logo' 'information';
+}
+.headercontainer .navbar{
+    grid-area: navbar;
+    background-color: rgb(53, 226, 9);
+    display: grid;
+    grid-template-columns:100%;
+}
+.navbar h1{
+    color:rgb(255, 255, 255);
+    text-align: left;
+    width:100%;
+    font-size: 2em;
+    letter-spacing: 7px;
+}
+.navbar ul{
+    display: none;
+}
+.navbar ul>li,.navbar ul>li>a{
+    width:100%;
+    display: block;
+    padding: 3px 0px;
+    text-align: center;
+    transition: all 0.4s ease;
+}
+.navbar li:hover a,nav li:hover{
+    color:white;
+    background-color: crimson;
+}
+.headercontainer>div.headerlogo{
+    grid-area:logo;
+}
+div.headerlogo div{
+    color: white;
+    text-align: center;
+    padding-top: 45px;
+    float: left;
+    display: inline-block;
+    width:25%;
+    height: 180px;
+    font-size: 5em;
+}
+/*define logo*/
+#g{
+    background-color: yellow;
+}
+#r{
+    background-color: crimson
+}
+#i{
+    background-color: steelblue;
+}
+#d{
+    background-color: saddlebrown;
+}
+
+.headercontainer>div.headerinfo{
+    grid-area:information;
+}
+div.headerinfo>h1{
+    color:rgb(248, 94, 94);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+}
+div.headerinfo>ul>li{
+    text-transform: capitalize;
+    font-variant: small-caps;
+    letter-spacing: 0.5px;
+    padding: 3px 0px;
+    text-align: center;
+    color: azure;
+}
+.sectioncontainer{
+    grid-area: section;
+}
+.sectionitem{
+    grid-area:sectionitem;
+}
+.footercontainer{
+    grid:footer;
+}
+body{
+    margin: 0;
+    display: grid;
+    grid-template-areas: 'header' 'section' 'footer';
+}
+a{
+    color:black;
+    text-decoration:none;
+}
+ul{
+    list-style-type: none;
+}
+/* setting header container*/
+

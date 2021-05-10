@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>This was a layout based on grid</title>
+    <link type="text/css" rel="stylesheet" href="css/layoutgrid.css"/>
+</head>
+
+<body>
+    <header class="headercontainer">
+        <nav class="navbar">
+            <h1>GRID LAYOUT</h1>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Grid</a></li>
+                <li><a href="#">Column</a></li>
+            </ul>
+        </nav>
+        <div class="headerlogo">
+            <div id="g">G</div>
+            <div id="r">R</div>
+            <div id="i">I</div>
+            <div id="d">D</div>
+        </div>
+        <div class="headerinfo">
+            <h1>Grid container</h1>
+            <ul>
+                <li>Elit aliquip irure do est Lorem nostrud consequat dolor ipsum voluptate.</li>
+                <li>Elit aliquip irure do est Lorem nostrud consequat dolor ipsum voluptate.</li>
+                <li>Elit aliquip irure do est Lorem nostrud consequat dolor ipsum voluptate.</li>
+                <li>Elit aliquip irure do est Lorem nostrud consequat dolor ipsum voluptate.</li>
+            </ul>
+        </div>
+    </header>
+    <section class="sectioncontainer">
+        <article>
+            <h1>CREATE GRID</h1>
+            <div class="sectionitem">
+                <div>
+                    <h2>With grid</h2>
+                    <div><code>display:grid</code></div>
+                    <div>
+                        <div>Try</div>
+                    </div>
+                </div>
+                <div>
+                    <h2>With Grid inline</h2>
+                    <div><code>display:inline-grid</code></div>
+                    <div>Try</div>
+                </div>
+            </div>
+        </article>
+
+        <article>
+            <h1>Setting the grid</h1>
+            <div>
+                <div>
+                    <h2>Set the width</h2>
+                    <div>
+                        <p>Id adipisicing aute tempor veniam ad.</p>
+                        <code>grid-template-columns:auto auto auto;</code>
+                        <div>
+                            <div class="button">try</div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h2>Set the height</h2>
+                    <div>
+                        <p>Id adipisicing aute tempor veniam ad.</p>
+                        <code>grid-template-rows:auto 40px;</code>
+                        <div>
+                            <div class="button">try</div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h2>Set the gap column</h2>
+                    <div>
+                        <p>Id adipisicing aute tempor veniam ad.</p>
+                        <code>column-gap:length unit;</code>
+                        <div>
+                            <div class="button">try</div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h2>Set the row gap</h2>
+                    <div>
+                        <p>Id adipisicing aute tempor veniam ad.</p>
+                        <code>row-gap:length unit;</code>
+                        <div>
+                            <div class="button">try</div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h2>align by main axis(x)</h2>
+                    <div>
+                        <p>Id adipisicing aute tempor veniam ad.</p>
+                        <code>justify-content:center</code>
+                        <div>
+                            <div class="button">try</div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h2>align vertically (y)</h2>
+                    <div>
+                        <p>Id adipisicing aute tempor veniam ad.</p>
+                        <code>align-items:center</code>
+                        <div>
+                            <div class="button">try</div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h2>column grid item start</h2>
+                    <div>
+                        <p>Id adipisicing aute tempor veniam ad.</p>
+                        <code>grid-column-start:1</code>
+                        <div>
+                            <div class="button">try</div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h2>column grid item end</h2>
+                    <div>
+                        <p>Id adipisicing aute tempor veniam ad.</p>
+                        <code>grid-column-end:4//number line's column </code>
+                        <div>
+                            <div class="button">try</div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h2>row grid item start</h2>
+                    <div>
+                        <p>Id adipisicing aute tempor veniam ad.</p>
+                        <code>grid-row-start:1//number line'row</code>
+                        <div>
+                            <div class="button">try</div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h2>row grid item end</h2>
+                    <div>
+                        <p>Id adipisicing aute tempor veniam ad.</p>
+                        <code>grid-row-end:4</code>
+                        <div>
+                            <div class="button">try</div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h2>Shortend of grid item column</h2>
+                    <div>
+                        <p>Id adipisicing aute tempor veniam ad.</p>
+                        <code>grid-column: 1 / 4</code>
+                        <div>
+                            <div class="button">try</div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h2>Shortend of grid item row</h2>
+                    <div>
+                        <p>Id adipisicing aute tempor veniam ad.</p>
+                        <code>grid-row:1/ span 5</code>
+                        <div>
+                            <div class="button">try</div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h2>Combine row and column</h2>
+                    <div>
+                        <p>Id adipisicing aute tempor veniam ad.</p>
+                        <code>grid-area:1 / 3 / 5 / 4</code>
+                        <div>
+                            <div class="button">try</div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h2>naming a grid area</h2>
+                    <div>
+                        <p>Id adipisicing aute tempor veniam ad.</p>
+                        <code>.item {
+                            grid-area:header;
+                            }
+                            .container{
+                            display:grid;
+                            grid-template-areas:'header header . . .' 'header header . . .';
+                            }
+                        </code>
+                        <div>
+                            <div class="button">try</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </section>
+    <footer class="footercontainer">
+        <details>
+            You can modify this source
+            <summary>copyright &copy; : Tahina</summary>
+        </details>
+    </footer>
+
+</body>
+
+</html>

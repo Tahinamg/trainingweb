@@ -1,0 +1,388 @@
+* {
+    /*setting the breackpoint mobile first and also put 600px = small device*/
+    --breakpointsm:600px;
+    --breakpointmd:900px;
+    --breakpointlarge:1200px;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+/*here we set animation*/
+@keyframes boxshadowanimation{
+    from{
+        box-shadow: 50px 30px 10px #d51414b3,100px 60px 20px #5a1aeed9;
+    }
+    to{
+        box-shadow:-50px 30px 10px #d51414b3,-100px 60px 20px #5a1aeed9;
+    }
+}
+
+/*reset all elements of header*/
+/*they have the lower specifity*/
+.maincontent>section{
+    position: relative;
+}
+ul{
+    list-style-position: inside;
+    list-style-type: none;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+img{
+    width: 100%;
+}
+body>header:nth-child(1){
+    position: sticky;
+    top:0;
+    z-index: 999;
+}
+/*styling the header*/
+body>header:nth-child(1){
+    width: 100%;
+    height: auto;
+    background-color: rgb(90, 26, 238);
+    display:flex;
+    flex-direction: column;
+}
+header>.brand{
+    width: 100%;
+    height: 80px;
+    position: relative;
+}
+header>.brand img{/*insteed
+    position:absolute,right:0;top:0;bottom:0*/
+    float: right;
+    max-width: 50%;
+    height: 100%;
+}
+header>.brand::after{
+    content: '\2261';/*the number of entities*/
+    font-size: 40px;
+    cursor: pointer;
+    color:white;
+    float: left;
+}
+header>ul>li>a{
+    font-size: 1.2em;
+    color:white;
+    display: inline-block;/*because we can not set the width of inline element*/
+    width: 100%;
+    padding: 9px 0px;
+    text-align:center;
+    transition:all 0.6s ease-in 0s;
+}
+header>ul>li>a:hover{
+    background-color: white;
+    color:rgb(37, 4, 128);
+}
+/*styling my biography*/
+.banner{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center ;
+}
+.banner .title,.banner .quote{
+    text-align: center;
+}
+.banner .title{
+    color:rgb(53, 53, 53);
+    font-size:2.5em;
+    font-variant: small-caps;
+}
+.banner .quote{
+    color:rgb(126, 30, 194);
+    font-size:1.6em;
+    font-style:italic;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: lighter;
+}
+.banner figure{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.banner>figure>figcaption{
+color: rgb(29, 29, 29);
+font-size: 1.5em;
+font-style: italic;
+font-family: cursive;
+padding:10px;
+}
+.banner figure>img{
+    width:200px;
+    height: 200px;
+    padding: 10px;
+}
+
+.servicebanner h2{
+    text-align: center;
+    font-weight: 300;
+    color: mediumorchid;
+    font-style: italic;
+    text-transform: uppercase;
+}
+
+.servicebanner>ul>li{
+    float:left;
+    padding:0px 5px;
+    font-size: large;
+    text-transform: capitalize;
+    color: rgb(29, 29, 29);
+}
+.servicebanner>ul :not(li:first-child)::before{
+    content:"- ";
+    font-size: large;
+}
+.servicebanner ul{
+    overflow: auto;
+}
+
+/*styling the section*/
+section.container{
+    margin: 150px 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 30px;
+    position: relative;
+}
+section.container>aside,section.container>main.maincontent{
+    margin:10px 0;
+    width: 100%;
+}
+section.container>aside{
+    text-align: center;
+    height: 400px;
+    background-color: rgb(243, 243, 243);
+    order: 2;
+}
+section.container>aside>h2:first-child{
+    color:purple;
+    font-size: 1.7em;
+}
+section.container>.maincontent{
+    padding: 30px;
+    height: auto;
+    order: 1;
+    background-color: rgb(248, 247, 247);
+    position: relative;
+}
+.maincontent header{
+    position: absolute;
+    top:-10em;
+}
+.maincontent section header>h1{
+    color:rgb(160, 21, 21);
+    font-size: 2em;
+    text-align: center;
+    font-variant: small-caps;
+}
+.maincontent section p{
+    color:rgb(90, 90, 90);
+    font-size: 1em;
+    text-align:justify;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 2;
+    letter-spacing: 2.5px;
+}
+.maincontent section p .capitalize{
+    float:left;
+    font-size:30px;
+    text-transform: capitalize;
+}
+.maincontent section p::after{
+    content: '';
+    display: table;
+    clear: both;
+}
+/*creating my gallery*/
+#gallery h1:first-child{
+    text-align: center;
+    font-size:2.5em;
+    font-weight: 100;
+    font-variant: small-caps;
+    letter-spacing: 1px;
+    color:#ae1818;
+    
+}
+.containerimage{
+    display: flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 0 10px;
+}
+.containerimageitem{
+    flex-basis: 100%;
+}
+.item{
+    width: 100%;
+    filter: saturate(2) grayscale(100%);
+    padding: 0px 10px;
+}
+/*creating the footer*/
+footer.footer{
+    width:100%;
+    background-color: rgba(50,50,120);
+    display: flex;
+    flex-direction:column;
+    justify-content: space-around;
+}
+ .itemfooter>ul{
+    width: 100%;
+    text-align: center;
+}
+.itemfooter{
+    text-align: center;
+    padding: 10px 0px;
+}
+.itemfooter h3{
+    color:tomato;
+    font-size: 2em;
+}
+.itemfooter ul li a{
+    display: inline-block;
+    width: 100%;
+    color:white;
+    padding:10px 0px;
+    transition: all 0.2s;
+}
+
+.itemfooter ul li a:hover{
+    color:tomato;
+}
+/*breakpoint medium for header*/
+/*set the design of the medium screen for the header */
+@media all and (min-width:600px){
+    body>header:nth-child(1){
+        flex-direction: row;
+    }
+    header>.brand{
+        width: 30%;
+    }
+    header>.brand img{
+        float:left;
+        width: 100%;
+    }
+    header>.brand::after{
+        display: none;
+    }
+    header .navcontainer{
+        width: 70%;
+    }
+    header>ul>li{
+        float:right;
+        height: 100%;
+        /*display:inline-block*/
+    }
+    /*set clearfix*/
+    header>ul::after{
+        content: '';
+        overflow: hidden;
+    }
+    header>ul>li>a{
+        text-align: center;
+        height: 100%;
+        padding-left:20px;
+        padding-right:20px;
+        padding-top:20px;
+    }
+
+/*responsive of the gallery*/
+    .containerimageitem{
+        flex-basis: 50%;
+    }
+}
+@media all and (min-width:900px){
+    /*setting the banner responsive*/
+    .banner{
+        margin: 30px 0;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .banner>div:not(.servicebanner){
+        order:2;
+        width: 50%;
+    }
+    .banner>.servicebanner{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        order:3;
+    }
+    .banner figure{
+        height: 500px;
+        width: 50%;
+        order: 1;
+        flex-direction: column;
+        align-items: center;
+    }
+    .banner figure img{
+        padding: 0%;
+        width: 300px;
+        height: 400px;
+        object-fit: cover;
+        box-shadow: 50px 30px 10px #d51414b3,100px 60px 20px #5a1aeed9;
+        animation-name: boxshadowanimation;
+        animation-duration: 3s;
+        animation-timing-function: ease-in-out;
+        animation-delay: 0s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+
+    }
+    .banner>figure>figcaption{
+        display: none;
+    }
+    /*setting the section responsive*/
+    section.container{
+        margin:150px 10px;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        padding:30px 10px;
+        justify-content: space-between;
+    }
+    section.container>aside:nth-child(3){
+        width: 20%;
+        margin:10px 0;
+        order: 3;
+    }
+    section.container>aside:nth-child(1){
+        width: 20%;
+        margin:10px 0;
+        order: 1;
+    }
+    section.container>main.maincontent{
+        order: 2;
+        width: 50%;
+    }
+    .maincontent header{
+        position: absolute;
+        top:-10em;
+    }
+    .maincontent section header>h1{
+    color:rgb(160, 21, 21);
+    font-size: 2.5em;
+    text-align: center;
+    font-variant: small-caps;
+}
+    /*setting footer responsive*/
+    footer.footer{
+        flex-direction: row;
+        flex-wrap:nowrap;
+        justify-content: center;
+    }
+    .itemfooter{
+        padding: 10px 20px;
+    }
+}

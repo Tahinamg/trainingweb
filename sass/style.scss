@@ -1,0 +1,24 @@
+$media:"only screen and (max-width:1200px)";
+body{
+    background-color: aquamarine;
+}
+.table{
+    border-collapse: collapse;
+    background: {
+        color:red;
+    };
+    border: {
+        width: 5px;
+        style:dotted;
+        color:blue;
+    };
+    thead{
+        background-color: blanchedalmond;
+    }
+}
+@media #{$media}{
+    body{
+        background-color: red;    
+    }
+    
+}
