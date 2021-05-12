@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+        }
+        div.container{
+           background-color: rgb(248, 41, 82);
+           height: 900px;
+           width: 500px; 
+           display: grid;
+           grid-template-columns: 300px 100px 300px 50px;
+           grid-template-rows:400px auto auto auto;
+        }
+        div.container div{
+            height:200px;
+            background-color: rgba(153, 205, 50, 0.514);
+            font-size: larger;
+            text-align: center;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div>
+            A
+        </div>
+        <div>
+            B
+        </div>
+        <div>
+            C
+        </div>
+        <div>
+            D
+        </div>
+    </div>
+</body>
+</html>

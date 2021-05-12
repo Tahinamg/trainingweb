@@ -1,6 +1,8 @@
 /*reset*/
 *{
     box-sizing:border-box ;
+    margin: 0;
+    padding: 0;
 }
 .headercontainer{
     grid-area: header;
@@ -79,15 +81,89 @@ div.headerinfo>ul>li{
     text-align: center;
     color: azure;
 }
+/*end of the header*/
+
+/*styling section mobile first*/
 .sectioncontainer{
     grid-area: section;
+    display: grid;
+    grid-template-columns: 100%;
 }
+.sectiontheme{
+    display: flex;
+    flex-direction: column;
+   justify-content: space-around;
+   align-items: center;
+
+}
+.sectiontheme>h1, .sectiontheme>h2{
+    width: 100%;
+    text-transform: uppercase;
+    background-color: rgba(255, 68, 0, 0.993);
+    flex-wrap: wrap;
+    color: white;
+    padding: 6px 0px;
+    text-align: center;
+    letter-spacing: 0.5px;
+    font-size: 2em;
+}
+.sectionitem{
+    padding: 50px 0px;
+    width: 100%;
+    display:grid;
+    grid-template-columns: auto;
+    row-gap: 60px;
+    justify-content: center;
+}
+.containercard{
+    padding: 0px 0px;
+    width: 300px;
+    background-color: white;
+    position: relative;
+    border:2px solid rgb(3, 21, 54);
+}
+.containercard h2.card-title{
+    height: auto;
+    color:white;
+    background-color: rgb(61, 241, 6);
+    text-align: center;
+    position: relative;
+    top: -30px;
+    width: 80%;
+    margin: auto;
+}
+
+div.card-body{
+    height: auto;
+    background-color: rgb(2, 12, 39);
+    color: white;
+    font-style: italic;
+    min-height: 40px;
+}
+div.card-footer .button{
+    width: 100%;
+    height:auto;
+    padding: 4px 0px;
+    background-color: rgb(167, 45, 1);
+    text-align: center;
+    font-size:larger;
+    color: white;
+    padding: 6px 0px;
+}
+/*Settiing the footer mobile*/
+
 .sectionitem{
     grid-area:sectionitem;
 }
 .footercontainer{
     grid:footer;
+    width: 100%;
+    height: auto;
+    padding: 40px;
+     background-color: chartreuse;
+     color: white;
 }
+
 body{
     margin: 0;
     display: grid;
