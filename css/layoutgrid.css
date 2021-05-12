@@ -1,4 +1,19 @@
+@keyframes strech{
+    0%{
+        transform: skewX(0deg);
+    }
+    30%{
+        transform: skewX(20deg);
+    }
+    60%{
+        transform: skewX(-20deg);
+    }
+    100%{
+        transform: skewX(0deg);
+    }
+}
 /*reset*/
+
 *{
     box-sizing:border-box ;
     margin: 0;
@@ -34,7 +49,7 @@
     transition: all 0.4s ease;
 }
 .navbar li:hover a,nav li:hover{
-    color:white;
+    color:chartreuse;
     background-color: crimson;
 }
 .headercontainer>div.headerlogo{
@@ -53,6 +68,10 @@ div.headerlogo div{
 /*define logo*/
 #g{
     background-color: yellow;
+}
+#g>span{
+    display: inline-block;
+    animation: strech 3s ease 0s infinite alternate;
 }
 #r{
     background-color: crimson
@@ -94,7 +113,6 @@ div.headerinfo>ul>li{
     flex-direction: column;
    justify-content: space-around;
    align-items: center;
-
 }
 .sectiontheme>h1, .sectiontheme>h2{
     width: 100%;
@@ -113,11 +131,16 @@ div.headerinfo>ul>li{
     display:grid;
     grid-template-columns: auto;
     row-gap: 60px;
+    column-gap: 20px;
     justify-content: center;
 }
 .containercard{
+    display: flex;
+    flex-direction: column;
     padding: 0px 0px;
     width: 300px;
+    min-height: 250px;
+    height: 300px;
     background-color: white;
     position: relative;
     border:2px solid rgb(3, 21, 54);
@@ -127,18 +150,21 @@ div.headerinfo>ul>li{
     color:white;
     background-color: rgb(61, 241, 6);
     text-align: center;
-    position: relative;
-    top: -30px;
+    position: absolute;
+    bottom: 100%;
     width: 80%;
-    margin: auto;
+    margin: 0 10px;
+    font-size: 16px;
 }
 
 div.card-body{
-    height: auto;
     background-color: rgb(2, 12, 39);
     color: white;
     font-style: italic;
     min-height: 40px;
+    height: 100%;
+    text-align: left;
+    padding-top:30%;
 }
 div.card-footer .button{
     width: 100%;
@@ -149,6 +175,7 @@ div.card-footer .button{
     font-size:larger;
     color: white;
     padding: 6px 0px;
+    text-transform: capitalize;
 }
 /*Settiing the footer mobile*/
 
@@ -178,3 +205,50 @@ ul{
 }
 /* setting header container*/
 
+/*medium screen vie*/
+@media screen and (min-width:700px){
+    /*the header*/
+    .headercontainer .navbar{
+        grid-template-columns: 300px auto;
+    }
+    .navbar ul{
+        display: block;
+    }
+    .navbar ul>li{
+        padding: 0px;
+        float:right;
+        width: auto;
+    }
+    .navbar ul>li>a{
+        padding:10px 20px;
+        color:white;
+        font-size: large;
+        font-weight: 600;
+    }
+    /*section */
+    .sectionitem{
+        grid-template-columns: auto auto;
+        align-items: center;
+        justify-content: space-around;
+    }
+}
+@media screen and (min-width:900px){
+   /*define logo*/
+   .headercontainer{
+       grid-template-areas: 'navbar navbar' 'logo information';
+       padding-bottom: 150px;
+   }
+
+   .sectionitem{
+       grid-template-columns: auto auto auto;
+       justify-content: center;
+   }
+
+}
+@media screen and (min-width:1200px){
+    .sectionitem{
+        grid-template-columns: auto auto auto auto;
+       justify-content: center;
+
+    }
+}
