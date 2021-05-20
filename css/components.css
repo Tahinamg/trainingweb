@@ -1,0 +1,272 @@
+@keyframes appear{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+.topnav{
+    position: relative;
+    background-color: rgb(22, 22, 22);
+}
+a.itemnav{
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    padding: 20px 25px;
+}
+a.itemnav.active{
+    background-color: darkslateblue;
+    color:white;
+}
+div.navicon{
+    float: right;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    cursor:pointer;
+}
+div.navicon>div{
+    border:2px solid white;
+    margin:4px 0px;
+    width: 20px;
+    transition: all ease 1s;
+}
+div.navicon.change>div:nth-child(1){
+    transform: rotate(-45deg) translate(0px,4px);
+}
+div.navicon.change>div:nth-child(2){
+    opacity: 0;
+}
+div.navicon.change>div:nth-child(3){
+    transform: rotate(50deg) translate(-8px,-11px);
+}
+.itemnav:not(:first-child){
+    display:none;
+}
+@media all and (max-width:600px){
+   
+    .responsive a.itemnav{
+        display: block;
+        float: none;
+
+    }
+}
+
+@media all and (min-width:600px){
+    .topnav{
+        overflow: auto;
+        margin: 0;
+        padding: 0;
+    }
+    .itemnav{
+        box-sizing: border-box;
+        float: left;
+        text-transform: uppercase; 
+        transition: all ease-out 1s;
+        
+    }
+    .itemnav:hover{
+        background-color: blueviolet;
+    }
+}
+
+
+h1{
+    text-align: center;
+    background-color: chocolate;
+    color: chartreuse;
+    padding: 20px 0px;
+    width: auto;
+}
+.bar1,.bar2,.bar3{
+    height: 5px;
+    width: 40px;
+    background-color: brown;
+    margin:5px auto;
+    transition: all 1s;
+    cursor: pointer;
+}
+.change .bar1{
+     transform: rotate(-45deg) translate(-5px,4px);
+}
+.change .bar2{
+    opacity: 0;
+}
+.change .bar3{
+    transform: rotate(45deg) translate(-9px,-10px);
+
+}
+/*accordion*/
+.accordion,.panel{
+    width: 400px;
+}
+.accordion{
+    transition: all 0.2s;
+    padding: 6px 0px;
+    background-color: rgb(243, 51, 51);
+    color: rgba(235, 233, 233, 0.959);
+    border: none;
+    display: block;
+    transition: all 1s;
+}
+.panel{
+    text-align:justify;
+    max-height: 0;
+    overflow: hidden;
+    background-color: darkgray;
+    color: rgb(34, 34, 34);
+    transition: max-height 1s;
+}
+.accordion:hover,.active{
+    background-color: rgb(223, 7, 50);
+}
+/*horizontal tabs*/
+.tabs{
+    width: 100%;
+    overflow: hidden;
+    background-color: rgb(23, 240, 41);
+}
+.tabs .tablink{
+    float:left;
+    padding: 2px;
+    background-color: rgb(18, 209, 18);
+    color: white;
+    
+}
+.tabcontent{
+    width: 100%;
+    display: none;
+    animation: appear forwards 1s ease;
+}
+.active{
+    background-color: rgb(42, 80, 3);
+    transition: all ease 1s;
+}
+/*vertical tabs*/
+#verticaltabs::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+.tabs2{
+    height: 300px;
+    width: 300px;
+    overflow: hidden;
+    background-color: rgb(23, 240, 41);
+    float: left;
+}
+.tabs2 .tablink2{
+    width: 100%;
+    display: block;
+    padding: 2px;
+    background-color: rgb(18, 209, 18);
+    color: white;
+}
+.tabcontent2{
+    display: none;
+    width: auto;
+    float: left;
+    animation:appear forwards 1s ease;
+}
+
+.tabcontentheader{
+    box-sizing: border-box;
+    width: 100%;
+    text-align: center;
+    padding:50px;
+    border: 0px;
+    display: none;
+}
+#antananarive{
+    background-color: #ff6464;
+    color:rgb(133, 0, 0);
+}
+#mahajanga{
+    background-color: rgb(220, 82, 248);
+    color:rgb(162, 0, 255)
+}
+#tamatave{
+    background-color: rgb(100, 128, 255);
+    color: darkblue;
+}
+#tulear{
+    background-color: rgb(44, 27, 2);
+    color: yellow;
+}
+.tablinkheader{
+    width:25%;
+    padding: 10px;
+    text-align:center;
+    background-color:lawngreen;
+    color:white;
+    font-size:xx-large;
+    margin: 0;
+    background-clip: border-box;
+    float: left;
+    border: 0px;
+}
+.container{
+    width: 90%;
+    margin:5%;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.tabcontentimage{
+    width: 100%;
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+    height: 500px;
+    display: none;
+}
+.tabcontentimage>img{
+    height: 100%;
+    width:100%;
+    object-fit: cover;
+    filter: blur(3px) saturate(1.5) brightness(60%);
+}
+.tabcontentimage>div{
+    display: block;
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    color:white;
+}
+.tabcontentimage>div>h2{
+    font-size: xx-large;
+    text-align:center;
+    text-shadow: 1.5px 1px 5px rgba(8, 8, 8, 0.993),-1.5px 0px 5px rgba(248, 245, 245, 0.356);
+}
+.tabcontentimage>div>p{
+    font-size: x-large;
+    text-align:justify;
+}
+.groupboutton{
+    width: 100%;
+    position:absolute ;
+    bottom: 0;
+    left: 0;
+}
+.groupboutton>.tablinkimage{
+    color: rgb(255, 255, 255);
+    padding:20px;
+    float: left;
+    max-width: 25%;
+    width: 25%;
+    border: 0;
+    margin: 0;
+    box-sizing:border-box;
+    background-color: rgba(8, 10, 0, 0.788);
+    transition: all ease 0.4s;
+    cursor: pointer;
+    font-size: large;
+    z-index: 4;
+}

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Components exercices</title>
+    <link rel="stylesheet" href="css/components.css" />
+</head>
+
+<body>
+    <!--top navigation-->
+    <div class="topnav">
+        <a class="itemnav active" href="#">Home</a>
+        <a class="itemnav" href="#">Middle</a>
+        <a class="itemnav" href="#">Final</a>
+        <div class="navicon" onclick="navtoggle(this)">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+    <h1>Create menu icon</h1>
+    <div class="container" onclick="changeicon(this)">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+    </div>
+    <!--create accordion-->
+    <h1>Create accordion</h1>
+    <button class="accordion">Accordion 1</button>
+    <div class="panel">
+        <p>Occaecat fugiat ex est dolor ipsum ipsum quis non. Veniam in est anim magna minim nostrud sit eu. Et sit id
+            ex commodo in sint proident voluptate qui et. Elit voluptate occaecat sunt est eu mollit.
+            Est incididunt non cupidatat duis elit. Dolor duis aliquip anim sint deserunt quis elit consequat laborum
+            eiusmod esse anim eiusmod exercitation. Laborum cupidatat magna anim officia ex. Culpa eiusmod consectetur
+            labore laboris cupidatat consectetur eu anim adipisicing fugiat irure. Ex do aliquip quis culpa ut sit anim
+            commodo ut aliquip laboris qui ipsum. Fugiat cillum tempor ipsum veniam est. Magna proident ullamco ex
+            voluptate elit ut deserunt.</p>
+    </div>
+    <button class="accordion">Accordion 2</button>
+    <div class="panel">
+        <p>Occaecat fugiat ex est dolor ipsum ipsum quis non. Veniam in est anim magna minim nostrud sit eu. Et sit id
+            ex commodo in sint proident voluptate qui et. Elit voluptate occaecat sunt est eu mollit.
+            Est incididunt non cupidatat duis elit. Dolor duis aliquip anim sint deserunt quis elit consequat laborum
+            eiusmod esse anim eiusmod exercitation. Laborum cupidatat magna anim officia ex. Culpa eiusmod consectetur
+            labore laboris cupidatat consectetur eu anim adipisicing fugiat irure. Ex do aliquip quis culpa ut sit anim
+            commodo ut aliquip laboris qui ipsum. Fugiat cillum tempor ipsum veniam est. Magna proident ullamco ex
+            voluptate elit ut deserunt.</p>
+    </div>
+    <!--<h1>tabs</h1>
+    <div class="tabs">
+        <button class="tablink" onclick="opencity(event,'Paris')">Paris</button>
+        <button onclick="opencity(event,'London')" class="tablink">London</button>
+        <button onclick="opencity(event,'Balbuena')" class="tablink">Balbuena</button>
+        <button onclick="opencity(event,'Buenos')" class="tablink">Buenos aires</button>
+    </div>
+    <div id='Paris' class="tabcontent">
+        <h2>Paris</h2>
+        <p>Cupidatat aliqua dolore culpa et irure in proident tempor.</p>
+    </div>
+    <div id="London" class="tabcontent">
+        <h2>London</h2>
+        <p>Cupidatat aliqua dolore culpa et irure in proident tempor.</p>
+    </div>
+    <div id="Balbuena" class="tabcontent">
+        <h2>Balbuena</h2>
+        <p>Cupidatat aliqua dolore culpa et irure in proident tempor.</p>
+    </div>
+    <div id="Buenos" class="tabcontent">
+        <h2>Buenos aires</h2>
+        <p>Cupidatat aliqua dolore culpa et irure in proident tempor.</p>
+    </div>-->
+    <!--here is the second tabs-->
+    <div id="verticaltabs">
+        <h1>Vertical tabs</h1>
+        <div class="tabs2">
+            <button class="tablink2" onclick="opencity(event,'Paris')">Paris</button>
+            <button onclick="opencity(event,'London')" class="tablink2">London</button>
+            <button onclick="opencity(event,'Balbuena')" class="tablink2">Balbuena</button>
+            <button onclick="opencity(event,'Buenos')" class="tablink2">Buenos aires</button>
+        </div>
+        <div id='Paris' class="tabcontent2">
+            <h2>Paris</h2>
+            <p>Cupidatat aliqua dolore culpa et irure in proident tempor.</p>
+        </div>
+        <div id="London" class="tabcontent2">
+            <h2>London</h2>
+            <p>Cupidatat aliqua dolore culpa et irure in proident tempor.</p>
+        </div>
+        <div id="Balbuena" class="tabcontent2">
+            <h2>Balbuena</h2>
+            <p>Cupidatat aliqua dolore culpa et irure in proident tempor.</p>
+        </div>
+        <div id="Buenos" class="tabcontent2">
+            <h2>Buenos aires</h2>
+            <p>Cupidatat aliqua dolore culpa et irure in proident tempor.</p>
+        </div>
+    </div>
+
+    <!--Tab header  -->
+    <div class="container">
+        <button class="tablinkheader" onclick="opentab('antananarive',this,'#ff6464')">Antananarivo</button>
+        <button class="tablinkheader" onclick="opentab('mahajanga',this,'rgb(220, 82, 248)')">Mahajanga</button>
+        <button onclick="opentab('tamatave',this,'rgb(100, 128, 255)')" class="tablinkheader">Toamasina</button>
+        <button onclick="opentab('tulear',this,'rgb(44, 27, 2)')" class="tablinkheader">Toliara</button>
+        <!--clear fix-->
+
+        <div style="clear: both;"></div>
+        <div id="antananarive" class="tabcontentheader">
+            <h2>Antananarivo</h2>
+            <p>Do magna est esse tempor pariatur excepteur nostrud nisi.</p>
+        </div>
+        <div id="mahajanga" class="tabcontentheader">
+            <h2>Mahajanga</h2>
+            <p>Do magna est esse tempor pariatur excepteur nostrud nisi.</p>
+        </div>
+        <div id="tamatave" class="tabcontentheader">
+            <h2>Toamasina</h2>
+            <p>Do magna est esse tempor pariatur excepteur nostrud nisi.</p>
+        </div>
+        <div id="tulear" class="tabcontentheader">
+            <h2>Toliara</h2>
+            <p>Do magna est esse tempor pariatur excepteur nostrud nisi.</p>
+        </div>
+    </div>
+
+    <!--tabheader image-->
+    <div class="container">
+
+        <div id="tana" class="tabcontentimage">
+            <img src="image/antananarivo.jpg" alt="antananarivo renivohitra">
+            <div>
+                <h2>Antananarivo</h2>
+                <p>Do magna est esse tempor pariatur excepteur nostrud nisi.</p>
+            </div>
+
+        </div>
+        <div id="janga" class="tabcontentimage">
+            <img src="image/agriculture-countryside-cropland-2162128.jpg" alt="tanimbary">
+            <div>
+                <h2>Mahajanga</h2>
+                <p>Do magna est esse tempor pariatur excepteur nostrud nisi.</p>
+            </div>
+        </div>
+        <div id="toamasina" class="tabcontentimage">
+            <img src="image/saint-tropez.jpg" alt="miami hono e">
+            <div>
+                <h2>Toamasina</h2>
+                <p>Do magna est esse tempor pariatur excepteur nostrud nisi.</p>
+            </div>
+        </div>
+        <div id="toliara" class="tabcontentimage">
+            <img src="image/agriculture-countryside-crop-2131650.jpg" alt="ny iriko ho any toliara">
+            <div>
+                <h2>Toliara</h2>
+                <p>Do magna est esse tempor pariatur excepteur nostrud nisi.</p>
+            </div>
+        </div>
+        <!--<div id="another" class="tabcontentimage">
+        <img src="image/oracle.png" alt="autre exemple">
+        <div>
+            <h2>Another</h2>
+        <p>Do magna est esse tempor pariatur excepteur nostrud nisi.</p>
+        </div>
+    </div>-->
+        <div class="groupboutton">
+            <button class="tablinkimage" onclick="toogletabsimage('tana',this)">Antananarivo</button>
+            <button class="tablinkimage" onclick="toogletabsimage('janga',this)">Mahajanga</button>
+            <button class="tablinkimage" onclick="toogletabsimage('toamasina',this)">Toamasina</button>
+            <button class="tablinkimage" onclick="toogletabsimage('toliara',this)">Toliara</button>
+        </div>
+    </div>
+
+
+</body>
+<script>
+    function changeicon(x) {
+        x.classList.toggle("change");
+    }
+    (function accordion(accordion) {
+        let accordeon = document.getElementsByClassName(accordion);
+        let i = 0;
+        let panel = null;
+        while (i < (accordeon.length)) {
+
+            accordeon[i].addEventListener("click", function () {
+                panel = this.nextElementSibling;
+                this.classList.toggle("active");
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            }, true)
+            i++;
+        }
+    })("accordion");
+
+    function opencity(evnt, city) {
+        let tacontent, tablink, i;
+
+        tablink = document.getElementsByClassName("tablink2");
+        tacontent = document.getElementsByClassName("tabcontent2");
+        i = 0;
+        while (i < tablink.length) {
+            tablink[i].className = tablink[i].className.replace(" active", "");
+            i++;
+        }
+        i = 0;
+
+        while (i < tacontent.length) {
+            tacontent[i].style.display = "none"
+            i++;
+        }
+        document.getElementById(city).style.display = "block";
+        evnt.currentTarget.className += " active";
+    }
+    /*tab header*/
+
+    function opentab(id, elmnt, color) {
+        let tabcontent = document.getElementsByClassName("tabcontentheader");
+        let tablink = document.getElementsByClassName("tablinkheader")
+        let i = 0;
+        while (i < tabcontent.length) {
+            tabcontent[i].style.display = "none";
+            tablink[i].style.backgroundColor = ""
+            i++;
+        }
+        elmnt.style.backgroundColor = color;
+        document.getElementById(id).style.display = "block";
+    }
+    document.getElementsByClassName("tablinkheader")[0].click();
+
+    function toogletabsimage(id, elmnt) {
+        let tabcontentimage = document.getElementsByClassName("tabcontentimage");
+        let tablinkimage = document.getElementsByClassName("tablinkimage");
+        let i = 0;
+        while (i < tablinkimage.length) {
+            tablinkimage[i].style.backgroundColor = "";
+            tabcontentimage[i].style.display = "none";
+            i++;
+        }
+        document.getElementById(id).style.display = "block";
+        elmnt.style.backgroundColor = "transparent";
+    }
+    document.getElementsByClassName("groupboutton")[0].firstElementChild.click();
+    function navtoggle(elmnt) {
+        let itemnav=document.querySelectorAll(".topnav")[0];
+        elmnt.classList.toggle("change");
+
+        if(itemnav.className==="topnav"){
+            itemnav.className+=" responsive";
+
+        }else{
+            itemnav.className="topnav"
+        }
+    }
+</script>
+
+</html>

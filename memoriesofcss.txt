@@ -1,0 +1,14 @@
+MEnu=
+changement du icon navbar= permet d'acceder à des menu du navigations lorsqu'on est sur le mobile.
+
+faire de l'accordion : permet de creer un page avec des informations empiler verticalement. on pourrait le developper,en clickant sur les titres de l'accordion.
+
+faire une tabs : organiser, parcourir differrentes informations relier et qui sont sur les mêmes niveaux hierarchique
+    -tabsheader:c'est l'entete qui est parcouru
+    -tabsvertical:on parcours verticalement
+    -tabs:l'element à parcourir est en bas des boutouns qui les parcourent
+    -hovertabs
+    -fullpagetabs
+
+topnavigation: naviguer à travers les pages à partir du bar de navigation
+
