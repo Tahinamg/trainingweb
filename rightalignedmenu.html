@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>right aligned menu</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            scroll-behavior: smooth;
+        }
+        .menu{
+            padding-right: 10px;
+            width: 100%;
+            overflow: hidden;
+            position: fixed;
+        }
+        .top{
+            background-color: turquoise;
+            top: 0;
+        }
+        .bottom{
+            background-color: tomato;
+            bottom: 0;
+        }
+        .menu a{
+            text-decoration: none;
+            font-size: large;
+            color: white;
+            float: left;
+            display: block;
+            padding: 4px 10px;
+            transition: 1s;
+            position: relative;
+        }
+        .menu a.active{
+                background-color: white;
+                color: purple;
+        }
+        .menu a:hover{
+            background-color: white;
+            color: purple;
+        }
+        .menuright{
+            float: right;
+        }
+        .menucentered{
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%,0%);
+        }
+        .menuequalwidth{
+            width: 100%;
+            overflow: hidden;
+            background-color: yellow;
+        }
+        .menuequalwidth>a{
+            box-sizing: border-box;
+            float: left;
+            color: teal;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: larger;
+            text-transform: capitalize;
+            width: 25%;
+        }
+        .menuequalwidth>a:hover{
+            color: white;
+            background-color: blueviolet;
+        }
+        @media screen and (max-width:700px) {
+            .menu a,.menuright{
+                display: none;
+            }
+            .menucentered{
+                position: relative;
+                left: 0;
+                transform: none;
+                float: left;
+            }
+            .menucentered a{
+                display: block;
+            }
+            .menuright{
+                float: none;
+            }
+            .menuequalwidth>a{
+            float: none;
+            padding: 20px 10px;
+            display: block;
+            width: 100%;
+            text-align: left;
+        }
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="menu top">
+        <div class="menucentered">
+            <a class="active" href="#">Home</a>
+        </div>
+        <a  href="#">menulinktop</a><a  href="#">menulinktop</a><a href="#">menulinktop</a>
+        <div class="menuright"><a href="#">menuright</a><a href="#">menuright</a></div>
+    </div>
+    <div class="menu bottom">
+        <div class="menucentered active">
+            <a class="active" href="#">Home</a>
+        </div>
+        <a href="#">menulinktop</a><a href="#">menulinktop</a><a href="#">menulinktop</a>
+        <div class="menuright"><a href="#">menuright</a><a href="#">menuright</a></div>
+    </div>
+    <main style="margin-top:25%; text-align: center;">
+        <h1>They are a menu with a bar on top and bottom with right side</h1>
+        <hr>
+        <h2>This is a menu with </h2><hr>
+        <div class="menuequalwidth">
+            <a href="#">equal width</a><a href="#">equal width</a><a href="#">equal width</a><a href="#">equal width</a>
+        </div>
+    </main>
+</body>
+</html>

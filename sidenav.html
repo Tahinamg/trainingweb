@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Let create sidenav navigation</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        .sidenav{
+            list-style: none;
+            overflow-y: hidden;
+            width: 25%;
+            position: fixed;
+            background-color: rgb(104, 104, 104);
+        }
+       
+        .itemsidenav>.linksidenav{
+            display: block;
+            color:whitesmoke;
+            padding:15px 10px;
+            text-decoration: none;
+            font-size: large;
+            transition: all 0.2s ease-in;
+        }
+        .linksidenav:hover{
+            background-color: gold;
+            color:rgb(36, 36, 36)
+        }
+        .pagecontent{
+            margin-left: 25%;
+            padding: 4px 20px;
+            text-align: justify;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="sidenav">
+        <li class="itemsidenav"><a class="linksidenav" href="#">Home</a></li>
+        <li class="itemsidenav"><a class="linksidenav" href="#">JustNav</a></li>
+        <li class="itemsidenav"><a class="linksidenav" href="#">About</a></li>
+        <li class="itemsidenav"><a class="linksidenav" href="#">GO away</a></li>
+    </ul>
+    <div class="pagecontent">
+        <h1>This is a fixed sidebar navigation</h1>
+        Sunt anim minim anim pariatur irure veniam. Aliquip nisi consequat duis elit sunt anim. Pariatur consectetur id
+        voluptate dolore cillum ullamco veniam irure excepteur ipsum exercitation. Lorem ad ad reprehenderit labore ad
+        ad excepteur incididunt. Aute esse minim quis mollit Lorem incididunt ullamco elit Lorem officia nostrud.
+        Consectetur eiusmod duis nisi nostrud tempor culpa ullamco eu eu officia.
+
+        Minim nulla magna culpa proident. Eu exercitation incididunt laboris quis irure laborum occaecat magna pariatur
+        consectetur nisi cupidatat. In et id velit occaecat aute anim ullamco adipisicing ipsum aute laborum. Sint
+        consequat nulla et ipsum nulla mollit aute id voluptate aute veniam cillum esse duis. Nulla do elit ut minim qui
+        exercitation excepteur officia sint reprehenderit fugiat deserunt do cillum. Mollit ea sunt dolor laboris.
+
+        Consequat mollit dolor commodo sunt velit laborum pariatur minim reprehenderit aliqua non. Tempor magna
+        exercitation ea amet consequat minim est exercitation in ut labore laborum ullamco. Do esse ad voluptate eiusmod
+        et duis aute sunt ad aliqua dolore officia est excepteur. Ad eu magna magna tempor enim reprehenderit sunt
+        officia reprehenderit consectetur. Nisi qui veniam commodo aliqua non non minim eu. Aliqua labore est eiusmod
+        tempor occaecat officia eu consequat commodo consectetur velit fugiat aliqua ex.
+
+        Adipisicing labore eu irure ex cillum culpa sint. Ipsum voluptate dolor consequat labore ipsum ea. Lorem commodo
+        eiusmod sint dolor occaecat est est laboris incididunt proident voluptate anim.
+    </div>
+</body>
+
+</html>

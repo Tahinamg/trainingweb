@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>navbarshrink</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            padding:0;
+            margin: 0;            
+       }
+        #navbar{
+            width: 100%;
+            position: fixed;
+            top:0;
+            padding: 80px 10px;
+            overflow: hidden;
+            background-color: rgb(255, 255, 75);
+            transition: all 0.5s;
+        }
+        #navbar h1{
+            float: left;
+            font-size: xx-large;
+            transition: 0.5s;
+        }
+        #navbar a{
+            font-size: large;
+            text-decoration: none;
+            padding: 20px 20px;
+            color: rgb(32, 23, 23);
+            float: right;
+            transition: all 1s;
+        }
+        #navbar a:hover{
+            color: teal;
+        }
+        @media screen and (max-width: 700px){
+            #navbar{
+                padding: 70px 10px !important;
+            }
+            #navbar h1{
+                float: none;
+            }
+            #navbar a{
+                display: block;
+                float: none;
+                padding: 10px 10px;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <nav id="navbar">
+        <h1 id="logo">Company logo</h1>
+        <a href="#">shrink</a><a href="#">shrink</a><a href="#">shrink</a><a href="#">shrink</a>
+    </nav>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+<script>
+    window.onscroll=()=>{shrinknavbar()}
+    function shrinknavbar(){
+        if(document.body.scrollTop>80 || document.documentElement.scrollTop>80){
+        document.getElementById('navbar').style.padding="20px 10px";
+        document.getElementById('logo').style.fontSize="medium";
+    }else{
+        document.getElementById('navbar').style.padding="";
+        document.getElementById('logo').style.fontSize="";
+    }
+    }
+</script>
+</html>

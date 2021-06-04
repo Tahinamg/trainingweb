@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pill navigation</title>
+</head>
+<style>
+    *{
+        /*reset the default setting of browser*/
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    /*first mobile*/
+    .pill-nav{
+        display: block;
+        width: 100%;
+        background-color: rgb(219, 217, 217);
+    }
+    .pill-nav a{
+        display: block;
+        padding: 20px;
+        text-decoration: none;
+        color: rgb(51, 51, 51);
+        width: 100%;
+        background-color: rgb(219, 217, 217);
+        border-radius: 5px;
+        margin: 0px 1px;
+    }
+    a.active{
+        background-color: rgb(72, 75, 253);
+        color: white;
+    }
+    .pill-nav a:hover{
+        background-color: rgb(53, 51, 51);
+        color: white;
+    }
+    @media screen and (min-width:700px){
+        .pill-nav a{
+            display: inline-block;
+            width: auto;
+        }
+    }
+</style>
+<body>
+    <nav class="pill-nav">
+        <a class="active" href="#">Linkpill</a><a href="#">Linkpill</a><a href="#">Linkpill</a><a href="#">Linkpill</a><a href="#">Linkpill</a>
+    </nav>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sticki navbar</title>
+    <style>
+        /*@keyframes test{
+            from{
+                background-position: 0% 0%;
+                background-size: 100%;
+            }to{
+                background-position: -100% -100%;
+                background-size: 50%;
+            }
+        }*/
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        .item {
+            font-size: 40px;
+            font-weight: bolder;
+            padding: 5%;
+            height: 500px;
+            width: 100%;
+            background-image: url("image/agriculture-countryside-cropland-2162128.jpg");
+            background-clip: padding-box;
+            background-attachment: fixed;
+            color: black;
+            text-align: center;
+        }
+
+        .navitem {
+            overflow: hidden;
+            position: sticky;
+            top: 0;
+            background-color: rgb(17, 0, 0);
+        }
+
+        .navitem a {
+            float: left;
+            padding: 5px 30px;
+            color: white;
+            text-decoration: none;
+        }
+
+        .secondNav {
+            overflow: hidden;
+            position: relative;
+            background-color: rgb(146, 0, 0);
+        }
+
+        .secondNav a {
+            float: left;
+            padding: 5px 30px;
+            color: white;
+            text-decoration: none;
+        }
+
+        .sticky {
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div>
+            <header class="item">
+                <h1>this is an first alternative to create sticky nav</h1>
+                <p>the first way is to use the position:sticky</p>
+            </header>
+            <nav class="navitem">
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+                <a href="#">Link 4</a>
+                <a href="#">Link 5</a>
+            </nav>
+            <div style="height: 300px; width: 100%;text-align: center;color: teal; font-size: large;">
+                <p>Ipsum pariatur do eiusmod ipsum. Excepteur culpa voluptate amet qui exercitation aliqua magna
+                    deserunt. Proident duis aliquip dolore qui anim consectetur veniam cillum ex. Ea nulla do ullamco
+                    amet magna sunt dolor commodo dolor. Quis occaecat velit ipsum minim ea ipsum irure laborum et.
+                    Magna commodo eiusmod magna sit est.
+
+                    Qui aliqua anim nisi proident proident quis cillum consectetur est veniam culpa sint aliquip.
+                    Commodo duis dolore do culpa voluptate nulla reprehenderit amet ea excepteur velit sint Lorem.
+                    Ullamco eiusmod minim veniam amet. Irure reprehenderit ipsum sunt fugiat exercitation mollit in et
+                    reprehenderit dolore. Cillum quis ut sint velit in ipsum eiusmod nulla officia reprehenderit anim
+                    laborum culpa. Officia nostrud pariatur cupidatat elit officia est.
+
+                    Occaecat consectetur consectetur tempor amet veniam commodo labore proident ea. Nisi anim et magna
+                    do ea anim esse proident incididunt. Sint nulla eu minim aliqua est occaecat veniam. Est nisi
+                    adipisicing amet id ut. Aliquip tempor non culpa eiusmod nisi amet Lorem. Sit laboris ullamco
+                    eiusmod consectetur aliquip voluptate consequat exercitation mollit est est non.</p>
+            </div>
+        </div>
+
+        <div>
+            <div class="item">
+                <h1>this is another way to create sticky nav</h1>
+                <p>Using javascript and the position : fixed</p>
+            </div>
+            <nav id="secondnavbar" class="secondNav">
+                <a href="#">Second link</a>
+                <a href="#">Second link</a>
+                <a href="#">Second link</a>
+                <a href="#">Second link</a>
+            </nav>
+        </div>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    </div>
+
+</body>
+<script>
+    window.onscroll = () => {
+        stickIt()
+    }
+    var secondnavbar = document.getElementById('secondnavbar');
+    var stick = secondnavbar
+        .offsetTop; /*the secondnavbar.offsetTop could be change when we add stick class and then the pageYoffset will be equal like the offsetTop*/
+    function stickIt() {
+        if (window.pageYOffset >= stick) {
+            secondnavbar.classList.add("sticky");
+        } else {
+            secondnavbar.classList.remove("sticky")
+        }
+    }
+</script>
+
+</html>

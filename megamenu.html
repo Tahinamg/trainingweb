@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mega menu</title>
+    <style>
+        /*this party is to create navigation menu*/
+        * {
+            margin: 0;
+            padding: 0%;
+            box-sizing: border-box;
+            text-decoration: none;
+        }
+
+        .navbar {
+            width: 100%;
+            background-color: rgb(29, 29, 29);
+            overflow: hidden;
+        }
+
+        .navbarlink {
+            float: left;
+            display: block;
+            padding: 10px 30px;
+            color: white;
+        }
+
+        .navbarlink:hover .subnavbar {
+            display: block;
+        }
+
+        .navbarlink>a {
+            color: white;
+        }
+
+        .subnavbar {
+            width: 100%;
+            position: absolute;
+            left: 0;
+            background-color: rebeccapurple;
+            color: white;
+            display: none;
+        }
+
+        .subnavbar>.subnavlink {
+            color: rgb(0, 0, 0);
+            float: left;
+            display: block;
+            padding: 10px 20px;
+        }
+
+        .subnavlink>a {
+            color: black;
+        }
+
+        .containerMegaMenu>div {
+            width: 100%;
+            position: absolute;
+            left: 0;
+            background-color: rgb(240, 240, 240);
+            display: none;
+        }
+
+        .containerMegaMenu.subnavlink:hover>div {
+            display: block;
+        }
+
+        .containerMegaMenu h2 {
+            font-size: larger;
+            background-color: yellowgreen;
+            color: white;
+            height: 80px;
+            padding-top: 30px;
+            text-align: center;
+        }
+
+        .containeritem {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+
+        .column a {
+            display: block;
+            padding: 10px 5px;
+            font-size: medium;
+            text-transform: capitalize;
+            color: tomato;
+            transition: 0.2s;
+        }
+
+        .column a:hover {
+            text-decoration: underline;
+            color: yellowgreen;
+        }
+
+        /*this party to create pagination*/
+        .pagination {
+            margin-left: 50%;
+        }
+
+        .pagination a {
+            transform: translateX(-50%);
+            display: inline-block;
+            padding: 7px 10px;
+            color: rgb(54, 54, 54);
+            font-size: xx-large;
+        }
+
+        .pagination a:hover {
+            background-color: rgb(219, 219, 219);
+            color: white;
+        }
+
+        .pagination a:first-child,
+        .pagination a:last-child {
+            color: skyblue;
+        }
+
+        .pagination a.active {
+            background-color: rgb(59, 102, 241);
+            color: white;
+        }
+
+        /*this party is to create breadcrumb*/
+        .breadcrumb {
+            list-style: none;
+            list-style-position: inside;
+            overflow: hidden;
+        }
+
+        .breadcrumb>.breadcrumbitem {
+            float: left;
+            padding: 2px 15px;
+        }
+
+        .breadcrumbitem:not(:last-child)::after {
+            content: '/\0006';
+            color: brown;
+            padding: 8px;
+        }
+
+        /*create icon bar*/
+        .icon-bar{
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .icon-bar span{
+            display: block;
+            padding: 10px 5px;
+            z-index: 3;
+            font-size: x-large;
+            font-weight: 900;
+        }
+        .facebook{
+            background-color: rgb(34, 34, 187);
+            color: white;
+        }
+        .google{
+            background-color: rgb(184, 25, 14);
+            color: white;
+        }
+        .redmit{
+            background-color: rgb(14, 184, 42);
+            color: white;
+        }
+        .inkedin{
+            background-color: rgb(1, 2, 19);
+            color: white;
+        }
+
+        /*this party to create the btn-grp*/
+        .btn-grp {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .btn-grp button {
+            background-color: springgreen;
+            color: rgb(252, 252, 252);
+            float: left;
+            border: 1px solid green;
+            padding: 10px;
+            font-size: xx-large;
+            font-weight: 600;
+            transition: 200ms;
+        }
+
+        .btn-grp button:not(:last-child) {
+            border-right: none;
+        }
+
+        .btn-grp button:hover {
+            background-color: seagreen;
+        }
+
+        .btn-grp.vertical {
+            width: auto;
+        }
+
+        .btn-grp.vertical button {
+            display: block;
+            float: none;
+        }
+
+        .btn-grp.btn-grp.vertical button:not(:last-child) {
+            border-bottom: none;
+            border-right: 1px solid seagreen;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <!--create navbar container-->
+        <a class="navbarlink" href="#">Home</a><a class="navbarlink" href="#">Portfolio</a><a class="navbarlink"
+            href="#">About</a>
+        <div class="subnavcontainer navbarlink">
+            <!--this is a navbar item-->
+            <a href="#">Services</a>
+            <!--create subnav container-->
+            <div class="subnavbar">
+                <!--they are subnav item-->
+                <a class="subnavlink" href="#">Seller</a>
+                <a class="subnavlink" href="#">Buyer</a>
+                <!--container of mega menu-->
+                <div class="containerMegaMenu subnavlink">
+                    <!--this is too a subnavitem-->
+                    <a href="#">WORK</a>
+                    <!--this is the container of the big menu-->
+                    <div>
+
+                        <h2>HEADER MENU</h2>
+                        <div class="containeritem">
+                            <div class="column">
+                                <a href="#">submenu</a>
+                                <a href="#">submenu</a>
+                                <a href="#">submenu</a>
+                            </div>
+                            <div class="column">
+                                <a href="#">submenu</a>
+                                <a href="#">submenu</a>
+                                <a href="#">submenu</a>
+                            </div>
+                            <div class="column">
+                                <a href="#">submenu</a>
+                                <a href="#">submenu</a>
+                                <a href="#">submenu</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="icon-bar">
+        <span class="facebook">F</span>
+        <span class="google">G</span>
+        <span class="redmit">Re</span>
+        <span class="inkedin">In</span>
+    </div>
+    <!--this is party is for the party is for some components-->
+    <article>
+        <h2>this is a pagination</h2>
+        <div class="pagination">
+            <a href="#">&laquo;</a><a href="#">1</a><a href="#" class="active">2</a><a href="#">3</a><a href="#">4</a><a
+                href="#">5</a><a href="#">6</a><a href="#">&raquo;</a>
+        </div>
+        <h2> Creating breadcrumb</h2>
+        <ul class="breadcrumb">
+            <li class="breadcrumbitem"><a href="#">Home</a></li>
+            <li class="breadcrumbitem"><a href="#">Services</a></li>
+            <li class="breadcrumbitem"><a href="#">Premium</a></li>
+            <li class="breadcrumbitem">Yellow 100</li>
+        </ul>
+        <h2>Creating button group</h2>
+        <div class="btn-grp"><button style="width: 33.3%;">Apple</button><button
+                style="width: 33.3%;">Samsung</button><button style="width: 33.3%;">Oppo</button></div>
+        <h2>Creating button group vertical</h2>
+        <div class="btn-grp vertical"><button style="width: 33.3%;">Apple</button><button
+                style="width: 33.3%;">Samsung</button><button style="width: 33.3%;">Oppo</button></div>
+    </article>
+
+</body>
+
+</html>

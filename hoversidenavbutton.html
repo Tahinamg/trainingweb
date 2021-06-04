@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hoversidenavbutton</title>
+    <style>
+        /*make style */
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .hoverablesidenav+div {
+            margin-left: 100px;
+            /*to make the text visible*/
+        }
+        .hoverablesidenav a {
+            position: fixed;
+            display: block;
+            text-decoration: none;
+            text-align: left;
+            color: white;
+            padding: 8px;
+            width: 100px;
+            left: -50px;
+            transition: 0.4s;
+        }
+
+        #about {
+            background-color: red;
+            top: 20px;
+        }
+
+        #services {
+            background-color: green;
+            top: 60px;
+        }
+
+        #client {
+            background-color: rgb(0, 102, 255);
+            top: 100px;
+        }
+
+        #resolution {
+            background-color: rgb(255, 139, 6);
+            top: 140px;
+        }
+
+        .hoverablesidenav a:hover {
+            left: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="hoverablesidenav">
+        <a href="#" class="sidenavbutton" id="about">About</a>
+        <a href="#" class="sidenavbutton" id="services">Services</a>
+        <a href="#" class="sidenavbutton" id="client">Clients</a>
+        <a href="#" class="sidenavbutton" id="resolution">Resolution</a>
+    </div>
+    <div>
+        <h1>This is a title with the high degree of semantics</h1>
+    </div>
+</body>
+
+</html>

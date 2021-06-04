@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrollmenuvertical</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+
+        }
+        .navbar{
+            width: 100%;
+            background-color: black;
+            /*overflow:hidden this is too a clearfix*/
+        }
+        .navbar::after{
+            /*this is a clearfix*/
+            content: "";
+            display: table;
+            clear: both;
+        }
+        .navbar a{
+            font-size: larger;
+            float: left;
+            display: block;
+            padding: 3px 10px;
+            color: white;
+            text-decoration: none;
+            border: 3px solid transparent;
+            transition: 0.8s;
+        }
+        .navbar a:hover{
+            border-bottom: 3px solid rebeccapurple;
+        }
+        .content {
+            white-space: nowrap;
+            background-color: black;
+            width: 600px;
+            overflow-x: scroll;
+        }
+
+        .content a {
+            text-align: center;
+            text-decoration: none;
+            color: white;
+            padding: 10px;
+            display: inline-block;
+            transition: all 0.1s;
+        }
+
+        .content a:hover {
+            background-color: tomato;
+            color: black;
+        }
+
+        .menuvertical {
+            width: 500px;
+        }
+
+        .menuvertical a {
+            text-decoration: none;
+            color: white;
+            background-color: slateblue;
+            padding: 10px;
+            display: block;
+            transition: 0.2s;
+        }
+
+        .menuvertical a:hover {
+            color: blueviolet;
+            background-color: white;
+        }
+
+        .menuvertical a.active {
+            background-color: saddlebrown;
+            color: white;
+        }
+
+        .bottommenu {
+            display: block;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #000;
+        }
+
+        .bottommenu a.active {
+            background-color: rgb(82, 250, 82);
+        }
+
+        .bottommenu a {
+            display: block;
+            float: left;
+            color: white;
+            text-decoration: none;
+            font-size: xx-large;
+            padding: 5px 20px;
+        }
+
+        .responsive.bottommenu a {
+            float: none;
+        }
+
+        .bottommenu a:not(:first-child) {
+            display: none;
+        }
+
+        .responsive.bottommenu a:not(:first-child) {
+            display: block;
+        }
+
+        .bottommenu a.icon {
+            position: absolute;
+            z-index: 1;
+            bottom: 0;
+            right: 10px;
+            transform: rotate(-90deg);
+            display: block;
+            background-color: transparent;
+        }
+
+        @media screen and (min-width: 700px) {
+            .bottommenu a:not(:first-child) {
+                display: block;
+                float: left;
+            }
+
+            .bottommenu a.icon {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar"><a href="#">navitem</a><a href="#">navitem</a><a href="#">navitem</a><a href="#">navitem</a></div>
+
+    <div class="content">
+        <a href="#">menulinnk</a>
+        <a href="#">menulinnk</a>
+        <a href="#">menulinnk</a>
+        <a href="#">menulinnk</a>
+        <a href="#">menulinnk</a>
+        <a href="#">menulinnk</a>
+        <a href="#">menulinnk</a>
+        <a href="#">menulinnk</a>
+        <a href="#">menulinnk</a>
+        <a href="#">menulinnk</a>
+        <a href="#">menulinnk</a>
+        <a href="#">menulinnk</a>
+    </div>
+    <div class="menuvertical">
+        <a href="#" class="active">menuvertical</a>
+        <a href="#">menuvertical</a>
+        <a href="#">menuvertical</a>
+        <a href="#">menuvertical</a>
+    </div>
+    <div class="bottommenu" id="mybottommenu">
+        <a href="#" class="active">Home</a>
+        <a href="#">Services</a>
+        <a href="#">Play</a>
+        <a href="#">Portfolio</a>
+        <a href="javascript:void(0)" class="icon" onclick="openNav()">|||</a>
+    </div>
+</body>
+<script>
+    function openNav() {
+        let nav = document.getElementsByClassName("bottommenu")[0];
+        if (nav.className == "bottommenu") {
+            nav.className += " responsive";
+        } else {
+            nav.className = "bottommenu";
+        }
+    }
+</script>
+
+</html>

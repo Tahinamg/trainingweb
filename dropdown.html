@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DROPDOWN</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+
+    .navbar,
+    .navdropdown,
+    .navdropup {
+        list-style: none inside;
+        background-color: black;
+    }
+
+    .navbar::after {
+        /*using this clearfix instead of overflow: hidden*/
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    .navbar>.navitem {
+        float: left;
+        position: relative;
+    }
+
+    .navbar .navitem .navlink {
+        display: block;
+        padding: 10px 15px;
+        color: white;
+        text-decoration: none;
+    }
+
+    .navbar>.navitem>.navlink:hover {
+        background-color: rgb(255, 38, 38);
+        color: black;
+    }
+
+    .navdropdown {
+        width: auto;
+        display: none;
+        position: absolute;
+        background-color: rgb(255, 38, 38);
+        box-shadow: 0px 5px 3px grey;
+    }
+
+    .navdropup {
+        width: auto;
+        display: none;
+        position: absolute;
+        bottom: 48px;
+        background-color: rgb(255, 38, 38);
+        box-shadow: 0px -3px 3px 2px rgba(63, 63, 63, 0.281);
+    }
+
+    .navitem:hover .navdropdown,
+    .navitem:hover .navdropup {
+        display: block;
+    }
+
+    /*end of the party navigation*/
+    .dropdowncover {
+        position: relative;
+        width: auto;
+        display: inline-block;
+    }
+
+    .dropdownbutton {
+        padding: 20px;
+        background-color: orange;
+        color: white;
+        font-size: 20px;
+        border: 0;
+        cursor: pointer;
+    }
+
+    .dropdowncontent {
+        position: absolute;
+        display: none;
+        min-width: 200px;
+        box-shadow: 0px 2px 5px rgb(145, 145, 145);
+        z-index: 1;
+    }
+
+    .dropdowncontent>a {
+        text-decoration: none;
+        display: block;
+        font-size: large;
+        text-align: left;
+        text-indent: 5px;
+        background-color: rgb(255, 255, 255);
+        color: rgb(71, 71, 71);
+        transition: all 0.4s linear;
+    }
+
+    .dropdowncontent>a:hover {
+        text-indent: 15px;
+        background-color: rgb(70, 70, 70);
+        color: rgb(185, 185, 185);
+    }
+
+    .dropdowncover:hover .dropdowncontent {
+        display: block;
+    }
+
+    @media screen and (max-width: 600px) {
+        .navbar>.navitem {
+            float: none;
+        }
+
+        .navdropdown {
+            position: relative;
+            width: 100%;
+            box-shadow: none;
+            height: 0;
+            overflow: hidden;
+            display: block;
+            transition: all 1s;
+        }
+
+        .navdropdown>.navitem>.navlink:hover,
+        .navdropup>.navitem>.navlink:hover {
+            background-color: rgb(127, 241, 20);
+        }
+
+        .navdropup {
+            position: relative;
+            bottom: 0;
+            top: 0;
+            box-shadow: none;
+            height: 0;
+            overflow: hidden;
+            transition: all 1s;
+            display: block;
+        }
+
+        .navitem:hover .navdropdown,
+        .navitem:hover .navdropup {
+            height: 200px;
+        }
+    }
+
+    .navigationbar {
+        background-color: #333;
+        width: 100%;
+    }
+
+    /*set clearfix*/
+    .navigationbar::after {
+        display: table;
+        content: '';
+        clear: both;
+    }
+
+    .navigationbar .navigationlink {
+        display: block;
+        padding: 10px 10px;
+        color: white;
+        text-decoration: none;
+        font-size: large;
+        float: left;
+        transition: all 0.3s;
+    }
+
+    .navigationbar .subnavcontener:hover .subnavitem {
+        display: block;
+    }
+
+    .subnavcontener {
+        float: left;
+        overflow: hidden;
+        transition: all 0.3s;
+    }
+
+    .navigationbar .navigationlink:hover,
+    .navigationbar .subnavcontener:hover {
+        background-color: brown;
+    }
+
+    .subnavcontener>a {
+        display: block;
+        padding: 10px 10px;
+        color: white;
+        text-decoration: none;
+        font-size: large;
+    }
+
+    .subnavcontener .subnavitem {
+        z-index: 1;
+        position: absolute;
+        background-color: brown;
+        overflow: hidden;
+        width: 100%;
+        left: 0;
+        clear: both;
+        display: none;
+    }
+
+    .subnavcontener .subnavitem>.subnavigationlink {
+        float: left;
+        padding: 10px 10px;
+        color: white;
+        text-decoration: none;
+        font-size: medium;
+    }
+
+    .container {
+        margin-top: 190px;
+        margin-bottom: 50px;
+        width: 100%;
+        overflow: hidden;
+        background-color: yellow;
+    }
+
+    .container .subcontainer {
+        float: left;
+        padding: 10px 30px;
+        background-color: yellowgreen;
+        color: beige;
+        cursor: pointer;
+    }
+    .container .subcontainer:hover {
+        background-color: tomato;
+
+    }
+    .containersubcontainersubcontainer{
+        display: none;
+        position: absolute;
+        width: 100%;
+        left: 0;
+        background-color: tomato;
+        overflow: hidden;
+    }
+    .subcontainer:hover .containersubcontainersubcontainer{
+        display: block;
+    }
+    .containersubcontainersubcontainer .subcontaineritemofitem{
+        float: left;
+        padding: 4px 10px;
+    }
+</style>
+
+<body>
+    <div class="dropdowncover">
+        <button class="dropdownbutton">Hover me</button>
+        <div class="dropdowncontent">
+            <a href="#">Link</a><a href="#">Link</a><a href="#">Link</a><a href="#">Link</a>
+        </div>
+    </div>
+    <hr>
+    <div class="dropdowncover" style="float: left;">
+        <button class="dropdownbutton">Hover me</button>
+        <div class="dropdowncontent">
+            <a href="#">Link</a><a href="#">Link</a><a href="#">Link</a><a href="#">Link</a>
+        </div>
+    </div>
+    <div class="dropdowncover" style="float: right;">
+        <button class="dropdownbutton">Hover me</button>
+        <div class="dropdowncontent" style="right: 0;">
+            <a href="#">Link</a><a href="#">Link</a><a href="#">Link</a><a href="#">Link</a>
+        </div>
+    </div>
+
+    <article style="clear: both;">
+        <h1>Create dropdown with list element</h1>
+        <p>this is alternative to create a list element</p>
+    </article>
+    <nav>
+        <ul class="navbar">
+            <li class="navitem">
+                <a class="navlink" href="#">Link1</a>
+                <ul class="navdropdown">
+                    <li class="navitem">
+                        <a class="navlink" href="#">Sublink2</a>
+                    </li>
+                    <li class="navitem"><a class="navlink" href="#">Sublink2</a></li>
+                    <li class="navitem"><a class="navlink" href="#">Sublink2</a></li>
+                </ul>
+            </li>
+            <li class="navitem"> <a class="navlink" href="#">Link1</a>
+                <ul class="navdropup">
+                    <li class="navitem">
+                        <a class="navlink" href="#">Sublink2</a>
+                    </li>
+                    <li class="navitem"><a class="navlink" href="#">Sublink2</a></li>
+                    <li class="navitem"><a class="navlink" href="#">Sublink2</a></li>
+                </ul>
+            </li>
+            <li class="navitem"> <a class="navlink" href="#">Link1</a></li>
+        </ul>
+    </nav>
+
+    <div style="position: relative;">
+        <nav class="navigationbar">
+            <a class="navigationlink" href="#">Link</a>
+            <a class="navigationlink" href="#">Link</a>
+            <a class="navigationlink" href="#">Link</a>
+            <div class="subnavcontener">
+                <a href="#">Link1</a>
+                <div class="subnavitem ">
+                    <a class="subnavigationlink" href="#">SubLink</a>
+                    <a class="subnavigationlink" href="#">SubLink</a>
+                    <a class="subnavigationlink" href="#">SubLink</a>
+                    <a class="subnavigationlink" href="#">SubLink</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div style="position: relative;">
+        <div class="container">
+            <div class="subcontainer">A</div>
+            <div class="subcontainer">A</div>
+            <div class="subcontainer">A</div>
+            <div class="subcontainer sub">
+                <div class="subcontaineritem">B</div>
+                <div class="containersubcontainersubcontainer">
+                    <div class="subcontaineritemofitem">C</div>
+                    <div class="subcontaineritemofitem">C</div>
+                    <div class="subcontaineritemofitem">C</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>

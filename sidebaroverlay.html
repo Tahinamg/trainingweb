@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Side navigation </title>
+    <style>
+        body{
+            transition: all ease 0.2s;
+        }
+        *{
+            padding: 0;
+            margin: 0;
+            
+        }
+        ul.sidenav{
+            list-style: none;
+            width: 0;
+            background-color:rgb(29, 28, 28);
+            padding-top: 60px;
+            position: fixed;
+            height: 100%;
+            transition: all ease 0.2s;
+            z-index: 1;
+        }
+        .sidenavitem{
+            position: relative;
+            width: 100%;
+        }
+        .closebtn{
+            color: white;
+            text-decoration: none;
+            font-size: 30px;
+            position: absolute;
+            right: 15px;
+            top:-60px;
+        }
+        .sidenavlink{
+            display: block;
+            color: white;
+            text-decoration: none;
+            font-size: large;
+            padding: 10px 0px;
+            text-indent: 10px;
+            overflow: hidden;
+        }
+        .sidenavlink:hover{
+            background-color: teal;
+        }
+        .sidenavlink.active{
+            background-color: blueviolet;
+        }
+        .main{
+            padding: 10px 20px;
+            transition: all ease 200ms;
+        }
+        button{
+            padding: 10px;
+            background-color: rgb(223, 223, 117);
+            color: rgb(80, 80, 80);
+            border: 0;
+            border-radius: 4px;
+            pointer-events: visible;
+            transition: all ease 0.2s;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="sidenav">
+        <li class="sidenavitem"><a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a></li>
+        <li class="sidenavitem"><a class="sidenavlink active" href="#">HOME</a></li>
+        <li class="sidenavitem"><a class="sidenavlink" href="#">ABOUT</a></li>
+        <li class="sidenavitem"><a class="sidenavlink" href="#">LET DO IT</a></li>
+    </ul>
+    <div class="main">
+        <h1>this is a sidenav overlay</h1>
+        <p>click on the different button below to see what they do</p>
+        <button onclick="openNavOverlay()">side overlay</button>
+        <button onclick="openNavOverlaywithoutAn()">side overlay without animation </button>
+        <button onclick="pushSide()">side nav push(off-canvas)</button>
+        <button onclick="pushSideWithOpacity()">side nav push w/opacity</button>
+        <button onclick="pushSidefullWidth()">side nav full-width</button>
+    </div>
+</body>
+<script>
+    function closeNav(){
+        document.getElementsByClassName("sidenav")[0].style.width="0";
+        document.getElementsByClassName("main")[0].style.marginLeft="0";
+        document.body.style.backgroundColor="rgba(250,250,250,0.9)";
+
+        for (let index = 0; index < document.getElementsByTagName("button").length; index++) {
+            const element = document.getElementsByTagName("button")[index];
+            element.style.backgroundColor="";
+        }
+    }
+    function openNavOverlay(){
+        document.getElementsByClassName("sidenav")[0].style.width="20%";
+    }
+    function openNavOverlaywithoutAn(){
+        /*this function need to rewrite the property of sidenav to display none*/
+        //document.getElementsByClassName("sidenav")[0].style.display="block";
+    }
+    function pushSide(){
+        document.getElementsByClassName("sidenav")[0].style.width="20%";
+        document.getElementsByClassName("main")[0].style.marginLeft="20%";
+    }
+    function pushSideWithOpacity(){
+        document.getElementsByClassName("sidenav")[0].style.width="20%";
+        document.body.style.backgroundColor="rgba(0,0,0,0.9)";
+        for (let index = 0; index < document.getElementsByTagName("button").length; index++) {
+            const element = document.getElementsByTagName("button")[index];
+            element.style.backgroundColor="rgba(0,0,0,0.9)";
+        }
+    }
+    function pushSidefullWidth(){
+        document.getElementsByClassName("sidenav")[0].style.width="100%";
+    }
+</script>
+</html>

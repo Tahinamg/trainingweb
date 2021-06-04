@@ -12,3 +12,24 @@ faire une tabs : organiser, parcourir differrentes informations relier et qui so
 
 topnavigation: naviguer à travers les pages à partir du bar de navigation
 
+searchmenunavigation: permet de chercher un item menu specifique sur un menu vertical(ou horizontal)
+searchnav:permet de faire une recherche sur le bar navigation.
+Sidenav: permet de faire une barre de navigation sur les côtés.
+sidenaveoverlay:est comme une barre de navigation sur les côtés mais son apparition dépend d'un boutton qu'on actione. Il est preferable d'utiliser un sidebar avec position fixe dans les petits écrans que du side bar avec push
+full-screen-navigation: creer une navigation full screen (plein ecran)
+hover sidenavbutton: creez plusieurs button de côtés qui peuvent être survolés
+horizontal scroll menu: permet de faire une barre de navigation horizontal qui est scrollable
+vertical menu: un menu vertical
+bottom:menu fixe sur le bas de page
+bottombordernav: une barre de navigation avec un bordure sur chaque bas de page
+right aligned menu: creer un menu avec des item à droite et à gauche
+centered menu link: creer un menu avec un item au centered
+equal width menu link: avoir des menu de la même largeur
+shrink-navbar:retrecir le padding et le logo dans navbar
+navbar sticky :créer une barre de navigation autocolant
+navabar on image : creer une barre de navigation au dessus d'un image
+navbar dropdown,dropup : creer un menu avec un botton dropdown ou dropup
+navbar with submenu: creer un menu avec des sous menu
+mega menu: un menu avec un submenu et en core des menu
+pagination: un systeme qui recencie les pages
+creer un pile navigation: creer une navigation avec des piles items

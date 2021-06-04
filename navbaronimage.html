@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar on image</title>
+    <style>
+       *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        } 
+        .headerimage{   
+            background-image: url("image/4.JPG");
+            background-size: cover;
+            background-position: center;
+            min-height:400px;
+        }
+        .topnav{
+            position: absolute;
+            display: block;
+            width: auto;
+            overflow: hidden;
+        }
+        .topnav a{
+            color: white;
+            padding: 10px 20px;
+            text-decoration-line: none;
+            display: inline-block;
+            background-color: rgba(255, 0, 0, 0.336);
+            transition: all 0.3s;
+        }
+        .topnav a:hover{
+            background-color: rgba(0, 0, 0, 0);
+        }
+        .headerimage .bannier{
+            position: relative;
+            top: 5em;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="headerimage">
+        <div class="topnav"><a href="#">Link</a><a href="#">Link</a><a href="#">Link</a><a href="#">Link</a></div>
+        <div class="bannier">
+            <h1>I will be a rich man</h1>
+            <p>Become happy on what i'm doing</p>
+        </div>
+    </div>
+    
+</body>
+</html>

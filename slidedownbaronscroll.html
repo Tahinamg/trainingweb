@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide down bar on scroll</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        nav{
+            width: 100%;
+            overflow: hidden;
+            position: fixed;
+            background-color: yellow;
+            transition: 0.3s;
+            top:-60px;
+        }
+        nav a{
+            width:25%;
+            float: left;
+            padding: 5px 10px;
+            text-decoration: none;
+            color: brown;
+            text-align: center;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav id="navbar">
+            <a href="#">LINK++</a><a href="#">LINK++</a><a href="#">LINK++</a><a href="#">LINK++</a>
+        </nav>
+    </header>
+    <article>
+        <header>
+            <h1>This is an article</h1>
+            <p>Labore aliquip eu labore ea do ea anim excepteur reprehenderit ex deserunt velit veniam.</p>
+        </header>
+        <p>Occaecat laborum velit qui minim pariatur nostrud sit Lorem et labore adipisicing non aliquip aliquip.
+            Pariatur voluptate exercitation aliquip officia nulla Lorem officia ad est anim. Dolore aliquip irure in
+            pariatur aliquip Lorem enim culpa esse labore duis labore sunt.
+
+            Consequat fugiat sint ad est. Consequat sint nisi anim quis et. Aute et qui incididunt duis tempor commodo
+            aute elit nisi. Nulla non do aliqua excepteur enim.
+
+            Cupidatat exercitation esse eu est ut esse officia Lorem ad sunt irure laborum aliqua. Exercitation nisi
+            reprehenderit ipsum est non excepteur. Nulla anim aliqua esse in aute magna cupidatat labore.</p>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    </article>
+<script>
+    window.onscroll=()=>{scrollEnable();}
+
+    function scrollEnable(){
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    document.getElementById("navbar").style.top = "0";
+  } else {
+    document.getElementById("navbar").style.top = "-60px";
+  }
+} 
+</script>
+</body>
+
+</html>

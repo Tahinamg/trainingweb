@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search menu component</title>
+    <style>
+        body{
+            background-color: rgb(6, 0, 43);
+            color: white;
+        }
+        * {
+            /* reset all default style browser*/
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        .row{
+            display: flex;
+            flex-direction: row;
+            overflow: hidden;
+            justify-content: space-between;
+            height: 400px;
+        }
+        .left{
+            width:25%;
+            overflow: hidden;
+            background-color: rgb(16, 1, 70);
+            height: auto;
+        }
+        .left h2,.left input, .left ul{
+            width: 100%;
+        }
+        .left ul>li{
+            transition: all ease 0.2s;
+        }
+        .left ul{
+            list-style: none inside;
+            text-align: center;
+        }
+        .left ul>li:hover{
+            background-color: white;
+            color:blueviolet;
+            cursor: pointer;
+        }
+        .right{
+            width: 75%;
+            background-color: rgba(255, 238, 0, 0.486);
+        }
+        
+    </style>
+</head>
+
+<body>
+    <h1>Search menu</h1>
+    <p>this is a reproduction of search menu navigation like exercices component</p>
+
+    <!--we do like w3Schools has writing , it's not copy but it's a reproduction that is to say more reflexion and not just coding-->
+
+    <div class="row">
+        <div class="left">
+            <h2>Search Menu</h2>
+            <input id="mysearch" type="text" placeholder="Search menu ..." onkeyup="search()">
+            <ul>
+                <li>Home</li>
+                <li>CSS</li>
+                <li>HTML</li>
+                <li>Bootstrap</li>
+                <li>SCSS</li>
+                <li>Javascript</li>
+                <li>Typescript</li>
+            </ul>
+        </div>
+        <article class="right">
+            <h2>This is just a text</h2>
+            <p>Deserunt ipsum sunt Lorem sit et consectetur excepteur.</p>
+            <p>Voluptate laborum voluptate sit Lorem magna aute eiusmod ut do consectetur aliquip commodo cupidatat.</p>
+
+        </article>
+    </div>
+</body>
+<script>
+    function search(){
+        let input,li,i,word;
+        input=document.getElementById("mysearch");
+        i=0;
+        word=input.value.toUpperCase()
+        li=document.getElementsByTagName("li");
+        while(i<li.length){
+            if(li[i].textContent.toUpperCase().indexOf(word)>-1){
+                li[i].style.display=""
+            }else{
+                li[i].style.display="none";
+            }
+            i++;
+        }
+    }
+</script>
+</html>

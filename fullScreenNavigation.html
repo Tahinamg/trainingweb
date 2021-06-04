@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Let fullScreenNavigation</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .overlay{
+            position: fixed;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.849);
+            z-index: 1;/*put it on the top*/
+            width:0%;
+            transition: all 0.3s ease;
+        }
+        .overlay>.closebtn{
+            position: absolute;
+            font-size: 45px;
+            top: 30px;
+            right: 40px;
+        }
+        .overlay-content{
+            position: relative;
+            top:25%;
+        }
+        .overlay-content>a:hover{
+            text-shadow: 3px 3px 6px white;
+        }
+        .overlay a{
+            transition: all 0.2s ease;
+            padding: 8px;
+            text-decoration: none;
+            color:white;
+            font-size: 20px;
+            display: block;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="overlay">
+        <!--this is the conteneur of the overlay-->
+        <a onclick="closeOverlay()" class="closebtn" href="javascript:void(0)">&times;</a>
+        <div class="overlay-content">
+            <a href="#">Home</a>
+            <a href="#">Service</a>
+            <a href="#">Contact</a>
+            <a href="#">Portfolio</a>
+        </div>
+    </div>
+    <div onclick="showOverlay()" style="font-size: 6em; text-align: center; cursor: pointer; color: teal;">
+        Open
+    </div>
+</body>
+<script>
+    function showOverlay(){
+        document.getElementsByClassName('overlay')[0].style.width="100%";
+    }
+    function closeOverlay(){
+        document.getElementsByClassName('overlay')[0].style.width="0%";
+
+    }
+</script>
+</html>

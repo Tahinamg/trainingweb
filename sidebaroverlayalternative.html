@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alternativve sidebar overlay</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            display: flex;
+            flex-flow: row nowrap;
+            height: 100vh;
+        }
+        .sidenav{
+            list-style: none;
+            background-color:rgb(29, 28, 28);
+            padding-top: 60px;
+            position: fixed;
+            height: 100%;
+            transition: all ease 0.2s;
+            z-index: 1;
+            width: 0px;
+            overflow-y: hidden;
+        }
+        .sidenav.open{
+            width: 100%;
+        }
+        .sidenavitem{
+            position: relative;
+            width: 100%;
+        }
+        .closebtn{
+            color: white;
+            text-decoration: none;
+            font-size: 30px;
+            position: absolute;
+            right: 15px;
+            top:-60px;
+        }
+        .sidenavlink{
+            display: block;
+            color: white;
+            text-decoration: none;
+            font-size: large;
+            padding: 10px 0px;
+            text-indent: 10px;
+            overflow: hidden;
+        }
+        .sidenavlink:hover{
+            background-color: teal;
+        }
+        .sidenavlink.active{
+            background-color: blueviolet;
+        }
+        @media screen and (min-width: 700px)  {
+            .sidenav{
+                position: relative;
+                transition: all ease 0.4s;
+                width: 0;
+            }
+            .sidenav.open{
+                width: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <ul class="sidenav">
+        <li class="sidenavitem"><a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a></li>
+        <li class="sidenavitem"><a class="sidenavlink active" href="#">HOME</a></li>
+        <li class="sidenavitem"><a class="sidenavlink" href="#">ABOUT</a></li>
+        <li class="sidenavitem"><a class="sidenavlink" href="#">LET DO IT</a></li>
+    </ul>
+    <div class="main">
+        <h1>this is a sidenav overlay but responsive</h1>
+        <p>click on the different button below to see what they do</p>
+        <button onclick="openNavOverlay()">side overlay</button>
+        <button onclick="openNavOverlaywithoutAn()">side overlay without animation </button>
+        <button onclick="pushSide()">side nav push(off-canvas)</button>
+        <button onclick="pushSideWithOpacity()">side nav push w/opacity</button>
+        <button onclick="pushSidefullWidth()">side nav full-width</button>
+    </div>
+</body>
+<script>
+    function openNavOverlay() {
+        document.getElementsByClassName("sidenav")[0].classList.add('open');
+    }
+    function closeNav(){
+        document.getElementsByClassName("sidenav")[0].classList.remove('open');
+    }
+</script>
+</html>

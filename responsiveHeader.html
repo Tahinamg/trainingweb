@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive header pile</title>
+    <style>
+        /*first mobile
+        *reset all default style browser
+        */
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        header{
+            width: 100%;
+            padding: 10px 5px;
+            background-color: gainsboro;
+        }
+        header a{
+            display: block;
+            text-decoration: none;
+            font-size: large;
+            color: rgb(46, 46, 46);
+        }
+        header>a:first-child{
+            font-weight: 700;
+            color: rgb(56, 56, 56);
+            padding-left: 10px;
+            font-size: xx-large;
+        }
+        .header-right>a{
+            padding:10px ;
+            border-radius: 4px;
+        }
+        .header-right>a:hover{
+            background-color: rgb(19, 28, 29);
+            color: white;
+        }
+        .header-right>a.active{
+            background-color: cadetblue;
+            color: white;
+        }
+        /*desktop styling*/
+        @media screen and (min-width: 700px){
+            header{
+                overflow: hidden;
+            }
+            header>a:first-child{
+                float: left;
+            }
+            .header-right{
+                float: right;
+            }
+            .header-right>a{
+                display: inline-block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="#" id="companylogo">companyLogo</a>
+        <div class="header-right">
+            <a class="active" href="#">Home</a><a href="#">Services</a><a href="#">About</a>
+        </div>
+    </header>
+</body>
+</html>
