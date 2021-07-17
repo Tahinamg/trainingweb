@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Grid Status</title>
+    <style>
+        .row{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content:left;
+            align-items: stretch;
+        }
+        .row>.column{
+            flex-basis: 400px;
+            margin: 10px 10px;
+        }
+        .row>.column>img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="row">
+        <div class="column">
+            <img src="image/1.JPG" alt="i" />
+        </div>
+        <div class="column">
+            <img src="image/2.JPG" alt="ii" />
+        </div>
+        <div class="column">
+            <img src="image/3.png" alt="ii" />
+        </div>
+        <div class="column">
+            <img src="image/4.JPG" alt="ii" />
+        </div>
+        <div class="column">
+            <img src="image/agriculture-countryside-crop-2131650.jpg" alt="i" />
+        </div>
+        <div class="column">
+            <img src="image/agriculture-countryside-cropland-2162128.jpg" alt="ii" />
+        </div>
+        <div class="column">
+            <img src="image/anosy.jpg" alt="ii" />
+        </div>
+        <div class="column">
+            <img src="image/anosymamelana.jpg" alt="ii" />
+        </div>
+
+
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table filter</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+        .container{
+            width: 80%;
+            display: block;
+            margin: 20px auto;
+        }
+        label{
+            font-size: large;
+            color: black;
+        }
+        input{
+            padding: 5px 10px;
+            width: 100%;
+            border: 1px solid rgb(190, 190, 190);
+            margin-bottom: 5px;
+        }
+
+        table{
+            text-align: left;
+            border-collapse: collapse;
+            border: 1px solid grey;
+            width: 100%;
+        }
+
+        tr{
+            border-bottom: 1px solid rgb(201, 201, 201);
+        }
+        tbody>tr:hover{
+            background-color: rgb(180, 180, 180);
+        }
+        tr>th, tr>td{
+            padding: 10px;
+            transition: 0.4s;
+        }
+        tr>th{
+            background-color: rgb(97, 97, 97);
+            color: azure;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <label for="Mysearch">Search your item</label>
+        <input type="text" name="Search" id="Mysearch">
+        <table class="table stripe" id="Mytable">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Country</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Ravelojaona</td>
+                    <td>Madagascar</td>
+                </tr>
+                <tr>
+                    <td>Alfredo</td>
+                    <td>Zimbabwe</td>
+                </tr>
+                <tr>
+                    <td>Tahina</td>
+                    <td>Madagasikara</td>
+                </tr>
+                <tr>
+                    <td>Natanaela</td>
+                    <td>Mozambique</td>
+                </tr>
+                <tr>
+                    <td>Yuna</td>
+                    <td>Maurice</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+<script>
+    let input =document.getElementById("Mysearch")
+    input.addEventListener("keyup",filtertable,true)
+    function filtertable(){
+        let  tr,td,tbody,table,value;
+        value=this.value
+        console.log(value)
+        table=document.getElementById("Mytable")
+        tbody=table.getElementsByTagName("tbody")[0]
+        tr=tbody.getElementsByTagName("tr");
+        
+        for(let i=0;i<tr.length;i++){
+            td=tr[i].getElementsByTagName("td")[0];
+            if(td.textContent.toUpperCase().indexOf(value.toUpperCase())>-1){
+                tr[i].style.display=""
+            }else{
+                tr[i].style.display="none"
+            }
+        }
+
+       
+    }
+</script>
+</html>

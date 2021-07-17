@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter list</title>
+    <style>
+        *{
+
+            box-sizing: border-box;
+        }
+        #Mysearch{
+            background-image: url('https://img.icons8.com/material-outlined/24/000000/search--v1.png');
+            background-repeat: no-repeat;
+            background-origin: border-box;
+            background-position: 20px 20px;
+            width: 100%;
+            background-size:35px;
+            border: 1px solid rgb(233, 233, 233);
+            padding:25px 60px;
+        }
+        #myUl{
+            list-style: none;
+            padding: 0;
+            background-color: rgb(104, 226, 34);
+        }
+        a{
+            border: 1px solid rgb(83, 131, 38);
+            margin-top: -1px;
+            padding: 10px;
+            display: block;
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="text" name="search" id="Mysearch">
+
+        <ul id="myUl">
+            <li><a href="#">Alexia</a></li>
+            <li><a href="#">Ravelojaona</a></li>
+            <li><a href="#">Tahina</a></li>
+            <li><a href="#">Natanaela</a></li>
+            <li><a href="#">Not</a></li>
+            <li><a href="#">Senegalais</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+    var input=document.getElementById("Mysearch");
+    input.addEventListener("keyup",function(e){
+        let value=this.value
+        let ul=document.getElementById("myUl")
+        let li=ul.getElementsByTagName("li")
+        let a=null
+        for(let i=0;i<li.length;i++){
+            a=li[i].getElementsByTagName("a")[0]
+            a=a.textContent.toUpperCase()
+            if(a.indexOf(value.toUpperCase())>-1){
+                li[i].style.display=""
+            }else{
+                li[i].style.display="none"
+            }
+        }
+    },true)
+
+</script>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slideshow gallery</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .slidecontainer {
+            position: relative;
+            width: 100%;
+        }
+        .slide{
+            width: 100%;
+            padding: 5px;
+            position: relative;
+            height: 400px;
+            display: none;
+        }
+        .slidenumber{
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: xx-large;
+            color: white;
+            text-shadow: 0px 0px 2px rgba(128, 128, 128, 0.568);
+        }
+        .slide img{
+            width: 100%;
+            object-fit: cover;
+            height: 100%;
+        }
+        .controls{
+            position: absolute;
+            display: block;
+            background-color: rgba(241, 241, 241, 0.349);
+            padding: 20px;
+            color: rgb(20, 20, 20);
+            top: 25%;
+            font-size: xx-large;
+            font-weight: bolder;
+            text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.76);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .controls:hover{
+            background-color: rgba(251, 252, 250, 0.664);
+            color: rgb(8, 8, 8);
+            text-shadow: 0px 0px 5px black;
+        }
+        .left{
+            left: 0;
+        }
+        .right{
+            right:0;
+        }
+        .captiontext{
+            width: 100%;
+            background-color: rgb(29, 29, 29);
+            min-height: 80px;
+            color: white;
+            text-align: center;
+            font-size: xx-large;
+            text-shadow: 0px 0px 2px white;
+        }
+        .row{
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            align-items: stretch;
+        }
+        .column{
+            width: 100%;
+            opacity: 0.5;
+            transition: all 0.3s;
+        }
+        .column.show{
+            opacity: 1;
+        }
+        .column img{
+            width: 100%;
+            height: 100%;
+        }
+        
+
+    </style>
+</head>
+
+<body>
+    <div class="slidecontainer">
+        <div class="slide">
+            <div class="slidenumber">1/4</div>
+            <img src="image/agriculture-countryside-cropland-2162128.jpg" alt="voly ambolena">
+        </div>
+        <div class="slide">
+            <div class="slidenumber">2/4</div>
+            <img src="image/anosy.jpg" alt="anosy">
+        </div>
+        <div class="slide">
+            <div class="slidenumber">3/4</div>
+            <img src="image/anosymamelana.jpg" alt="Anosy tena tapakevitra">
+        </div>
+        <div class="slide">
+            <div class="slidenumber">4/4</div>
+            <img src="image/antananarivo.jpg" alt="Antananarivo manga rivotra">
+        </div>
+        <span class="controls left" onclick="plusSlide(-1)">&lt;</span>
+        <span class="controls right" onclick="plusSlide(1)">&gt;</span>
+        <div class="captiontext"></div>
+        <div class="row">
+            <div class="column" onclick="currentSlide(1)">
+                <img class="thumbnailimage" src="image/agriculture-countryside-cropland-2162128.jpg" alt="voly ambolena">
+            </div>
+            <div class="column" onclick="currentSlide(2)">
+                <img class="thumbnailimage" src="image/anosy.jpg" alt="anosy">
+            </div>
+            <div class="column" onclick="currentSlide(3)">
+                <img class="thumbnailimage" src="image/anosymamelana.jpg" alt="Anosy tena tapakevitra">
+            </div>
+            <div class="column" onclick="currentSlide(4)">
+                <img class="thumbnailimage" src="image/antananarivo.jpg" alt="Antananarivo manga rivotra">
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    let selectIndex=1;
+    showSlide(selectIndex);
+    function plusSlide(n){
+        showSlide(selectIndex+=n)
+    }
+    function currentSlide(n){
+        showSlide(selectIndex=n)
+    }
+    function showSlide(number){
+        var myslide=document.getElementsByClassName("slide")
+        var column=document.getElementsByClassName("column")
+        var captiontext=document.getElementsByClassName("captiontext")
+        var thumbnailimage=document.getElementsByClassName("thumbnailimage")
+
+        for(var i=0;i<myslide.length;i++){
+            myslide[i].style.display="none"
+            column[i].classList.remove("show")
+        }
+        if(selectIndex<1){selectIndex=4}
+        if (selectIndex>4) {
+            selectIndex=1;
+        }
+
+        captiontext[0].innerHTML=thumbnailimage[selectIndex-1].getAttribute("alt")
+        myslide[selectIndex-1].style.display="block";
+        column[selectIndex-1].className+=" show";
+    }
+</script>
+</html>

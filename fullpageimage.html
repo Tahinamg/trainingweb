@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>full page image</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-image: url("image/anosy.jpg");
+            background-attachment: scroll;
+            background-size: 100%;
+            background-position: top left;
+            background-origin: border-box;
+        }
+
+        div {
+            position: absolute;
+            color: white;
+            text-align: center;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            font-size: 2em;
+        }
+        div>h1,div>p{
+            background-color: rgba(0, 0, 0, 0.74);
+            display: inline-block;
+            padding: 10px 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>This is full page image</h1><br>
+        <p>antananarivo</p>
+    </div>
+
+</body>
+
+</html>

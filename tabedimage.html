@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabed image</title>
+    <style>
+        .row {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: left;
+            align-items: stretch;
+        }
+
+        .row>.column {
+            flex-basis: 200px;
+            margin: 10px 10px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .row>.column>img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.6;
+            transition: 0.3s;
+        }
+
+        .row>.column:hover>img {
+            opacity: 1;
+        }
+
+        /*overlay section*/
+
+        .overlay {
+            overflow: hidden;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-color: rgba(255, 255, 2, 0.938);
+            opacity: 0;
+            transition: all 0.5s;
+        }
+
+        .overlaytext {
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        /*overlay slide to bottom*/
+        .overlay.slidetobottom {
+            height: 0;
+            opacity: 1;
+        }
+        /*overlay slide to top*/
+        .overlay.slidetotop{
+            height: 0;
+            opacity: 1;
+        }
+        /*transition for overlay*/
+        .column:hover .overlay {
+            opacity: 1;
+        }
+        /*transition for overlay slidetobottom and slide to top*/
+        .column:hover .overlay.slidetobottom,.column:hover .overlay.slidetotop {
+            height: 100%;
+        }
+        .tabedimage {
+            height: 400px;
+            width: 600px;
+            margin: auto;
+            position: relative;
+            display: none;
+            animation: appear 1s ease 0s 1 alternate forwards;
+        }
+
+        .tabedimage>#closebtn {
+            position: absolute;
+            right: 10px;
+            top: 0px;
+            font-size: 60px;
+            color: white;
+            text-shadow: 0px 0px black 60px;
+            cursor: pointer;
+        }
+
+        .tabedimage>img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @keyframes appear {
+            0% {
+                transform: scale(0);
+            }
+
+            30% {
+                transform: scale(1.2);
+            }
+
+            50% {
+                transform: scale(0.8);
+            }
+
+            70% {
+                transform: scale(1.2);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="text-align: center;">Click on every image</h1>
+    <div class="row">
+        <div class="column">
+            <img class="image" src="image/1.JPG" alt="i" />
+            <div class="overlay">
+                <div class="overlaytext">Life is GOOD</div>
+            </div>
+        </div>
+        <div class="column">
+            <img class="image" src="image/2.JPG" alt="ii" />
+            <div class="overlay slidetobottom">
+                <div class="overlaytext">Life is GOOD</div>
+            </div>
+        </div>
+        <div class="column">
+            <img class="image" src="image/3.png" alt="ii" />
+            <div class="overlay slidetotop">
+                <div class="overlaytext">Life is GOOD</div>
+            </div>
+        </div>
+        <div class="column">
+            <img class="image" src="image/4.JPG" alt="ii" />
+        </div>
+    </div>
+    <div class="tabedimage">
+        <span id="closebtn">&times;</span>
+        <img id="imagetarget" style="width:100%;height:100%;">
+    </div>
+</body>
+<script>
+    let btn = document.querySelector("#closebtn");
+    let image = document.getElementsByClassName("image");
+    let tabedimage = document.getElementsByClassName("tabedimage")[0];
+    let imagetarget = document.getElementById("imagetarget");
+    for (let i = 0; i < image.length; i++) {
+        image[i].addEventListener("click", function (e) {
+            tabedimage.style.display = "none";
+            setTimeout(function () {
+                tabedimage.style.display = "block";
+                imagetarget.src = e.target.src;
+                imagetarget.alt = e.target.alt;
+            }, 100)
+        }, true);
+    }
+    btn.addEventListener("click", function () {
+        tabedimage.style.display = "none";
+    }, true);
+</script>
+
+</html>

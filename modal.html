@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        div.containerimage{
+            width: 400px;
+            height: 400px;
+            margin: auto;
+        }
+        div.containerimage>img{
+            width: 100%;
+        }
+        .modal{
+            position: fixed;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.925);
+            z-index: 1;
+            display: none;
+            padding-top: 100px;
+        }
+        .modal>.close{
+            position: absolute;
+            right: 30px;
+            top: 10px;
+            color: white;
+            font-size: 5em;
+            cursor: pointer;
+        }
+        .modal>figure{
+            width: 80%;
+            max-width: 700px;
+            animation: zoom 0.4s ease 0s 1 normal forwards;
+            margin: auto;
+        }
+        .modal>figure>img{
+            width: 100%;
+        }
+        .modal>figure>figcaption{
+            text-align: center;
+            color: white;
+            font-size: large;
+        }
+        @keyframes zoom{
+            from{
+                transform: scale(0);
+            }to{
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="containerimage"><img class="imagetomodal" src="image/saint-tropez.jpg" alt="Saint tropez"></div>
+    <div class="modal">
+        <span class="close">&times;</span>
+        <figure>
+            <img class="theimagemodel" src="" alt=""/>
+            <figcaption class="captiontext"></figcaption>
+        </figure>
+    </div>
+</body>
+<script>
+    let imagetomodal=document.getElementsByClassName("imagetomodal")[0];
+    let modal=document.getElementsByClassName("modal")[0];
+    let close=document.getElementsByClassName("close")[0];
+    let caption=document.getElementsByClassName("caption")[0];
+    let theimagemodel=document.getElementsByClassName("theimagemodel")[0];
+    imagetomodal.addEventListener("click",function(){
+        modal.style.display="block";
+        theimagemodel.src=this.src;
+        theimagemodel.alt=this.alt;
+        caption.innerHTML=this.alt;
+    },true);
+    close.addEventListener("click",function(){
+        modal.style.display="none";
+    });
+
+
+</script>
+</html>

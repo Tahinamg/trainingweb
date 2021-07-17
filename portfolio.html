@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio filtering</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            background-color:rgb(169, 171, 253);
+        }
+        h1{
+            font-size:3em;
+            color: #df5050dc;
+            font-weight: bolder; 
+        }
+        hr{
+            color: #df5050dc;
+            border-width: 0.3em;
+            border-style: solid;
+        }
+
+        main h2{
+            font-size: 2em;
+            color: rgb(46, 44, 44);
+        }
+        main .group-btn{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            width: 100%;
+            justify-content: flex-start;
+            padding:10px 10px;
+        }
+        main .group-btn>button{
+            width: 100px;
+            height: 50px;
+            background-color: purple;
+            color: white;
+            border: 1px solid rgb(88, 0, 88);
+            cursor: pointer;
+            transition: all 400ms ease;
+            margin: 0px 4px;
+        }
+        main .group-btn>button:hover{
+            border: 1px solid purple;
+            background-color: white;
+            color: purple;
+        }
+        main .group-btn>button.active{
+            background-color: rgb(31, 1, 31);
+        }
+        main .group-btn>button.active:hover{
+            color: white;
+        }
+        
+        .row{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-content: stretch;
+            background-color: burlywood;
+        }
+        @media screen and (min-width:800px) {
+            .row{
+                justify-content: space-around;
+            }
+        }
+        @media screen and (min-width:1200px) {
+            .row{
+                justify-content: flex-start;
+            }
+        }
+        .column{
+            width: 300px;
+            margin: 10px;
+        }
+        .column>.content{
+            width: 100%;
+            padding: 5px 5px;
+            background-color: white;
+            height: 400px;
+
+        }
+        .column>.content img{
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .content h2{
+            font-size: 1.5em;
+            color: royalblue;
+        }
+        .content p{
+            color: rgb(32, 32, 32);
+        }
+        .content button.animatable{
+            background-color: orangered;
+            padding: 5px;
+            width: 150px;
+            border: none;
+            color: white;
+            font-size: large;
+            position: relative;
+            cursor: pointer;
+        }
+        .content button.animatable span{
+            display: inline-block;
+            position: relative;
+            right: 0px;
+            transition:  all 0.5s ease;
+
+        }
+        .content button.animatable::after{
+            content: '>>';
+            position: relative;
+            right: 0;
+            transition: all 0.5S ease;
+            opacity: 0;
+        }
+        .content button.animatable:hover span{
+            right: 10px;
+        }
+        .content button.animatable:hover::after{
+            opacity: 1;
+            right: 0;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Portfolio.com</h1>
+        <hr>
+    </header>
+    <main>
+        <h2>Filter your selection</h2>
+        <div class="group-btn">
+            <button onclick="filterSelection('all')" class="btnprimary active">show all</button>
+            <button onclick="filterSelection('nature')" class="btnprimary">nature</button>
+            <button onclick="filterSelection('people')" class="btnprimary">person</button>
+        </div>
+        <div class="row">
+            <div class="column people">
+                <div class="content">
+                    <img src="image/1.JPG" alt="hello">
+                    <h2>This is amazing</h2>
+                    <p>Laborum anim eu culpa adipisicing proident.</p>
+                    <button class="animatable"><span>hover</span></button>
+                </div>
+            </div>
+            <div class="column people">
+                <div class="content">
+                    <img src="image/2.JPG" alt="hello">
+                    <h2>this is amazing</h2>
+                    <p>Incididunt ut nulla tempor eu aute non reprehenderit occaecat sit proident mollit eu ea.</p>
+                </div>
+            </div>
+            <div class="column people">
+                <div class="content">
+                    <img src="image/3.png" alt="hello">
+                    <h2>this is amazing</h2>
+                    <p>Ea eiusmod quis ex mollit velit nisi voluptate ad esse.</p>
+                </div>
+            </div>
+            <div class="column people">
+                <div class="content">
+                    <img src="image/4.JPG" alt="hello">
+                    <h2>this is amazing</h2>
+                    <p>Dolor officia ipsum laborum quis in culpa incididunt veniam cillum.</p>
+                </div>
+            </div>
+            <div class="column nature">
+                <div class="content ">
+                    <img src="image/agriculture-countryside-crop-2131650.jpg" alt="hello">
+                    <h2>this is amazing</h2>
+                    <p>Eiusmod duis irure quis pariatur in veniam adipisicing.</p>
+                </div>
+            </div>
+            <div class="column nature">
+                <div class="content ">
+                    <img src="image/agriculture-countryside-cropland-2162128.jpg" alt="hello">
+                    <h2>this is amazing</h2>
+                    <p>Excepteur esse minim velit dolor cupidatat ipsum amet amet.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>

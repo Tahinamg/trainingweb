@@ -33,3 +33,27 @@ navbar with submenu: creer un menu avec des sous menu
 mega menu: un menu avec un submenu et en core des menu
 pagination: un systeme qui recencie les pages
 creer un pile navigation: creer une navigation avec des piles items
+slideimage: creer du slide pour explorer à travers des elements
+slidegallery: faire un slideshow avec comme dot les images
+modal :avoir un modal lors du click 
+lightbox:modal + slidegallery
+responsiveImageGrid: responsive image avec flex box
+tabbed image: show image on click on it on some element
+overlay image : ajout du texte sur les images lorsqu'on survole
+overlay image slide: ajoute du texte sur les images mais en slide
+image text: add text into image
+image text block: mettre une background sur l'image
+transparent image text: mettre une text block sur une image et faire son background color en transparent
+full page image: avoir une image background qui recouvre completement la page
+form on image : creer une formulaire sur une image
+hero image : ajout de texte sur un background image
+blurry background: ajoutez du flou sur une image
+side by side image :  image qui se situ côte à côte
+rounded image : creer une image ronde
+responsive image : crée une image responsive
+center image : creér une image centrer
+thumbanail : image de petite taille qui represente un image de grande taille (lorsqu'on clique sur celui-ci)
+meet team : utilisez pour illustrer les listes des employeés dans une société avec leur contact
+image sticky : ajoute une image sticky on scroll
+flip an image : scaleX(-1) changer le côter
+portfolio : créer un portfolio avec une filtre

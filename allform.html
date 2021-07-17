@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Allform</title>
+    <style>
+        @keyframes showscale {
+            from{
+                transform: scale(0);
+            }
+            to{
+                transform: scale(1);
+            }
+        }
+        .btn{
+            width: 60px;
+            font-size: large;
+            border: none;
+            padding: 5px;
+            cursor: pointer;
+        }
+        .btn.success{
+            background: rgb(14, 255, 14);
+            color: white;
+        }
+        .btn.danger{
+            background-color: rgb(250, 78, 78);
+            color: white;
+        }
+        .modal{
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.952);
+            z-index: 2;
+        }
+        .close{
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            z-index: 3;
+            color: white;
+            font-size: xx-large;
+            cursor: pointer;
+        }
+        .modal-content{
+            position: relative;
+            width: 500px;
+            margin: 50px auto;
+            background-color: rgb(238, 231, 231);
+        }
+        .modal-content.animate{
+            animation: showscale 0.4s ease 0s 1 normal forwards;
+        }
+        .modal-content>.container{
+            width: auto;
+            padding: 5px 10px;
+            margin: 0 auto;
+        }
+        .container>label{
+            display:block;
+            font-size: large;
+            color: rgb(29, 29, 29);
+        }
+        .container>input{
+            display: block;
+            width: 200px;
+            border: rgb(122, 122, 122) 1px solid;
+            margin: 4px 0px;
+            font-size: large;
+        }
+        .container button:nth-child(5){
+            position: relative;
+            left: 140px;
+        }
+    </style>
+    
+</head>
+<body>
+    <h1>All form here we create</h1>
+    <H2>Modal form</H2>
+     <!-- Button to open the modal login form -->
+<button class="btn success" onclick="document.getElementById('id01').style.display='block'">Login</button>
+
+<!-- The Modal -->
+<div id="id01" class="modal">
+  <span onclick="document.getElementById('id01').style.display='none'"
+class="close" title="Close Modal">&times;</span>
+
+  <!-- Modal Content -->
+  <form class="modal-content animate" action="/action_page.php">
+
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+
+      <button class="btn success" type="submit">Login</button>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button class="btn danger" type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+  </form>
+</div> 
+</body>
+<script>
+    // Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+if (event.target == modal) {
+modal.style.display = "none";
+}
+}
+</script>
+</html>

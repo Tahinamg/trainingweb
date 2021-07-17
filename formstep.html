@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form step</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgb(75, 75, 75);
+        }
+
+        h1{
+            text-align: center;
+        }
+        #regForm {
+            margin: 30px auto;
+            background-color: white;
+            width: 500px;
+            height: 400px;
+
+        }
+
+        .tab {
+            margin: 40px;
+            display: none;
+        }
+
+        .tab :not(input[type="submit"]) {
+            width: 250px;
+            padding: 5px;
+            margin-left: -2.5px;
+            
+        }
+
+        input.invalid {
+            border:1px solid rgb(255, 37, 37);
+        }
+
+        button {
+            width: 100px;
+            padding: 2px;
+            font-size: large;
+            margin: 0px 5px;
+            background-color: #3ca73f;
+            color: white;
+            border: 0px;
+        }
+
+        .step {
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbbbbb;
+            border: none;
+            border-radius: 50%;
+            display: inline-block;
+            opacity: 0.5;
+        }
+
+        .step.active {
+            opacity: 1;
+        }
+
+        /* Mark the steps that are finished and valid: */
+        .step.finish {
+            background-color: #4CAF50;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="regForm" action="action.php">
+        <h1>Register:</h1>
+        <!-- One "tab" for each step in the form: -->
+        <div class="tab">Name:
+            <p><input placeholder="First name..." oninput="this.className = ''" name="fname"></p>
+            <p><input placeholder="Last name..." oninput="this.className = ''" name="lname"></p>
+        </div>
+        <div class="tab">Contact Info:
+            <p><input placeholder="E-mail..." oninput="this.className = ''" name="email"></p>
+            <p><input placeholder="Phone..." oninput="this.className = ''" name="phone"></p>
+        </div>
+        <div class="tab">Birthday:
+            <p><input placeholder="dd" oninput="this.className = ''" name="dd"></p>
+            <p><input placeholder="mm" oninput="this.className = ''" name="nn"></p>
+            <p><input placeholder="yyyy" oninput="this.className = ''" name="yyyy"></p>
+        </div>
+        <div class="tab">Login Info:
+            <p><input placeholder="Username..." oninput="this.className = ''" name="uname"></p>
+            <p><input placeholder="Password..." oninput="this.className = ''" name="pword" type="password"></p>
+        </div>
+        <div style="overflow:auto;">
+            <div style="float:right;">
+                <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+                <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+            </div>
+        </div>
+        <!-- Circles which indicates the steps of the form: -->
+        <div style="text-align:center;margin-top:40px;">
+            <span class="step"></span>
+            <span class="step"></span>
+            <span class="step"></span>
+            <span class="step"></span>
+        </div>
+    </form>
+</body>
+<script>
+    function showTab(numbertab) {
+        let tab = document.getElementsByClassName('tab');
+        let prevBtn = document.getElementById('prevBtn');
+        let nextBtn = document.getElementById('nextBtn');
+
+        tab[numbertab].style.display = "block";
+
+        if (currentTab == 0) {
+            prevBtn.style.display = "none"
+        } else {
+            prevBtn.style.display = "inline"
+        }
+        if (currentTab == (tab.length - 1)) {
+            nextBtn.innerHTML = "Submit"
+        } else {
+            nextBtn.innerHTML = "Next"
+        }
+        fixStepindicator(numbertab)
+    }
+
+    function nextPrev(number) {
+        let tab = document.getElementsByClassName('tab');
+        if (number == 1 && !valideForm()) {
+            return false;
+        }
+        tab[currentTab].style.display = "none"
+        currentTab += number
+        if (currentTab >= tab.length) {
+            let regForm = document.getElementById("regForm");
+            regForm.submit();
+            return false
+        }
+        showTab(currentTab)
+    }
+
+    function valideForm() {
+        let i, valid = true;
+        let tab = document.getElementsByClassName('tab')
+        let input = tab[currentTab].getElementsByTagName("input")
+        for (i = 0; i < input.length; i++) {
+            if (input[i].value == "") {
+                input[i].className += " invalid";
+                valid= false;
+            }
+        }
+        if (valid) {
+            document.getElementsByClassName("step")[currentTab].className += " finish";
+        }
+        return valid;
+    }
+
+    function fixStepindicator(numberstep) {
+        let step = document.getElementsByClassName('step');
+        for (let i = 0; i < step.length; i++) {
+            step[i].classList.remove("active");
+        }
+        step[number].classList.add("active");
+    }
+    let currentTab = 0;
+    showTab(currentTab);
+</script>
+
+</html>

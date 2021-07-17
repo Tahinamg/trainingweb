@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forminnavbar</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .topnav {
+            display: block;
+            width: 100%;
+            background-color: chocolate;
+        }
+
+        /*clearfix*/
+        .topnav::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .topnav>a {
+            float: left;
+            display: block;
+            padding: 8px 10px;
+            text-decoration: none;
+            color: white;
+            transition: all 0.5s;
+        }
+
+        .topnav>a:hover {
+            background-color: firebrick;
+        }
+
+        .topnav>a.active {
+            background-color: yellowgreen;
+        }
+
+        .topnav .logincontainer {
+            float: right;
+        }
+
+        .logincontainer input {
+            border: none;
+            margin: 0px 8px;
+        }
+
+        .logincontainer :not(input[type="submit"], form) {
+            padding: 8px;
+        }
+
+        .logincontainer input[type="submit"] {
+            padding: 5px 20px;
+            color: white;
+            background-color: yellowgreen;
+            cursor: pointer;
+        }
+
+        @media screen and (max-width:800px) {
+            .topnav a {
+                float: none;
+            }
+
+            .topnav .logincontainer {
+                float: none;
+                width: 100%;
+            }
+
+            .logincontainer input {
+                display: block;
+                width: 90%;
+                margin: 3px 10px;
+            }
+        }
+
+        .checkboxcontainer {
+            cursor: pointer;
+            display: block;
+            position: relative;
+            padding-left: 35px;
+            margin-bottom: 10px;
+            user-select: none;
+        }
+
+        .checkboxcontainer>input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .checkboxmark {
+            position: absolute;
+            top: 0;
+            left: 3px;
+            height: 25px;
+            width: 25px;
+            background-color: rgb(228, 228, 228);
+            transition: all 0.4s;
+        }
+
+        .checkboxcontainer:hover input+.checkboxmark {
+            background-color: rgb(145, 145, 145);
+        }
+
+        .checkboxcontainer input:checked~.checkboxmark {
+            background-color: rgb(65, 65, 255);
+        }
+
+        .checkboxmark::after {
+            content: "";
+            display: none;
+            position: absolute;
+        }
+
+        .checkboxcontainer input:checked~.checkboxmark::after {
+            display: block;
+        }
+
+        .checkboxcontainer .checkboxmark::after {
+            left: 9px;
+            top: 5px;
+            width: 5px;
+            height: 10px;
+            border: solid white;
+            border-width: 0px 5px 5px 0px;
+            transform: rotate(45deg);
+        }
+
+        .switch {
+            position: relative;
+            width: 80px;
+            height: 40px;
+            display: block;
+            margin: 10px;
+        }
+
+        .switch>input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .switch .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgb(255, 100, 100);
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        .switch .slider::before {
+            content: "";
+            position: absolute;
+            display: block;
+            height: 30px;
+            width: 30px;
+            top: 5px;
+            left: 5px;
+            right: 0px;
+            background-color: rgb(207, 16, 16);
+            transition: .4s;
+        }
+
+        .switch input:checked ~ .slider{
+            background-color: rgb(57, 252, 57);
+        }
+        .switch input:checked ~ .slider::before{
+            background-color: rgb(6, 100, 6);
+            transform: translateX(35px);
+        }
+        .switch .slider.round{
+            border-radius: 20px;
+        }
+        .switch .slider.round::before{
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="topnav">
+        <a class="active" href="#">home</a><a href="#">home</a><a href="#">home</a><a href="#">home</a>
+        <div class="logincontainer">
+            <form action="action.php"><input type="text" placeholder="type your login"><input type="password"
+                    name="mypass" id="mypass" placeholder="tape your password"><input type="submit" value="Login">
+            </form>
+        </div>
+    </nav>
+    <h2>Custom checkbox</h2>
+    <label class="checkboxcontainer">Developpeur
+        <input type="checkbox" name="Compétence" value="Developpeur">
+        <span class="checkboxmark"></span>
+    </label>
+    <label class="checkboxcontainer">Rédacteur
+        <input type="checkbox" name="Compétence" value="Rédacteur">
+        <span class="checkboxmark"></span>
+    </label>
+    <label class="checkboxcontainer">SEO
+        <input type="checkbox" name="Compétence" value="SEO">
+        <span class="checkboxmark"></span>
+    </label>
+    <label class="checkboxcontainer">Design
+        <input type="checkbox" name="Compétence" value="Design">
+        <span class="checkboxmark"></span>
+    </label>
+
+
+    <!-- Rectangular switch -->
+    <label class="switch">
+        <input type="checkbox">
+        <span class="slider"></span>
+    </label>
+
+    <!-- Rounded switch -->
+    <label class="switch">
+        <input type="checkbox">
+        <span class="slider round"></span>
+    </label>
+</body>
+
+</html>

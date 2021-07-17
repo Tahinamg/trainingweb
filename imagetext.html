@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image text</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        /*this container to wrap and hold text and image*/
+        .container {
+            position: relative;
+            /*it most be declared*/
+            width: 80%;
+            text-align: center;
+            box-shadow: 0px 0px 10px black;
+            margin: auto;
+        }
+
+        .container>img {
+            position: relative;
+            width: 100%;
+        }
+
+        .p-absolute {
+            position: absolute;
+            font-size: xx-large;
+            background-color: rgba(0, 0, 0, 0.575);/*image text block*/
+            color: white;
+            padding: 10px;
+        }
+
+        .bottom-left {
+            bottom: 0;
+            left: 0;
+        }
+
+        .top-left {
+            top: 0;
+            left: 0;
+        }
+
+        .top-right {
+            top: 0;
+            right: 0;
+        }
+
+        .bottom-right {
+            bottom: 0;
+            right: 0;
+        }
+
+        .centered {
+            top: 50%;
+            left: 50%;
+            transform:translate(-50%,-50%);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>this is how to make a text on image</h1>
+    <div class="container">
+        <img src="image/antananarivo.jpg" alt="Snow" style="width:100%;">
+        <div class="p-absolute bottom-left">Bottom Left</div>
+        <div class="p-absolute top-left">Top Left</div>
+        <div class="p-absolute top-right">Top Right</div>
+        <div class="p-absolute bottom-right">Bottom Right</div>
+        <div class="p-absolute centered">Centered</div>
+    </div>
+</body>
+
+</html>
